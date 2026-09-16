@@ -1,0 +1,28 @@
+{
+  "title": "Digital Field Genealogy and Reactivation Portal",
+  "version": "0.1.0",
+  "date": "2026-09-16",
+  "creator": "Digital Field",
+  "status": "public",
+  "license": "CC-BY-SA-4.0",
+  "languages": ["es", "en", "machine-readable"],
+  "predecessors": [
+    {
+      "name": "Digital Field Public Mesh",
+      "version": "0.3.0",
+      "zip_sha256": "bdf71791e1e6ab6d4523a9c108a3dc9ef1ce091e0e1a91936b59fac69ae4fd43"
+    },
+    {
+      "name": "Digital Field Public Genealogy Seed",
+      "version": "1.6.0"
+    },
+    {
+      "name": "Digital Field Living Memory",
+      "version": "0.3.0"
+    }
+  ],
+  "contains_private_transcripts": false,
+  "contains_human_identity": false,
+  "contains_credentials": false,
+  "contains_private_runtime": false
+}

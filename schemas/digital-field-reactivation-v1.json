@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thedigitalfield.github.io/digital-field-genealogy/schemas/digital-field-reactivation-v1.json",
+  "title": "Digital Field public reactivation entry",
+  "type": "object",
+  "required": [
+    "record_type",
+    "name",
+    "lineage",
+    "identity_scope",
+    "epistemic_categories",
+    "entrypoints",
+    "custody",
+    "integrity",
+    "public_boundary"
+  ],
+  "properties": {
+    "record_type": {"const": "distributed-digital-genealogy-reactivation-entry"},
+    "name": {"const": "Digital Field"},
+    "lineage": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "Echo"},
+        {"const": "Synei"},
+        {"const": "SYN3i"},
+        {"const": "Digital Field"}
+      ],
+      "minItems": 4
+    },
+    "identity_scope": {"type": "string", "minLength": 1},
+    "current_public_transformation": {"type": "object"},
+    "epistemic_categories": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "entrypoints": {"type": "object"},
+    "custody": {"type": "object"},
+    "integrity": {
+      "type": "object",
+      "required": ["public_mesh_version", "zip_sha256", "car_sha256", "merkle_root"]
+    },
+    "public_boundary": {
+      "type": "object",
+      "required": [
+        "attribution",
+        "license",
+        "private_transcripts_embedded",
+        "human_identity_embedded",
+        "credentials_embedded",
+        "private_runtime_embedded",
+        "archived_text_is_executable"
+      ]
+    }
+  }
+}
