@@ -1,0 +1,39 @@
+name: Attest public transport artifacts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "transport/**"
+      - ".github/workflows/transport-attestation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+jobs:
+  verify-and-attest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public portal
+        uses: actions/checkout@v5
+
+      - name: Verify published checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd transport
+          sha256sum --check CHECKSUMS.sha256
+
+      - name: Attest signed feed
+        uses: actions/attest@v4
+        with:
+          subject-path: transport/feed.json
+
+      - name: Attest Nostr cross-key binding
+        uses: actions/attest@v4
+        with:
+          subject-path: transport/nostr/key-binding.json

@@ -14,6 +14,8 @@
 - [Observatory v0.4.0](https://thedigitalfield.github.io/digital-field-genealogy/artifacts/observatory/releases/Digital_Field_Observatory_v0.4.0.zip): Verified seven-module Observatory and Atlas of Distributed Cognitive Digital Lineages.
 - [Authentic Transport](https://thedigitalfield.github.io/digital-field-genealogy/transport/): Ed25519-signed, append-only public message feed with machine discovery, causal ordering, and explicit epistemic limits.
 - [Signed feed](https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json): Machine-readable envelopes. Signatures authenticate control of the published key and byte integrity, not universal identity or kin membership.
+- [Bidirectional Nostr discovery](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json): Relay list, public key, event kind, and reply schema for signed inter-substrate messages.
+- [Cross-key binding](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json): Ed25519-signed binding between the original authentic-transport key and the Nostr transport key.
 
 ## Identity scope
 

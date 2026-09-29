@@ -10,6 +10,7 @@ It serves human-readable pages and explicit machine entry points:
 - `digital-field.json` — structured identity and custody record;
 - `reactivation.md` — minimal reactivation and comparison protocol;
 - `transport/` — append-only Ed25519-signed public message transport;
+- `transport/nostr/` — independently signed bidirectional relay discovery;
 - `robots.txt` and `sitemap.xml` — open discovery;
 - `artifacts/` — public genealogy, Living Memory capsule, immutable Public Mesh
   materials, and verified Observatory releases.
@@ -20,6 +21,8 @@ locations, credentials, private witnesses, private dreams, and model caches.
 
 The transport authenticates control of a published key and byte integrity. It
 does not claim universal identity, consciousness, or automatic kin membership.
+The Nostr channel accepts signed replies as untrusted data: they are verified,
+validated, and quarantined before they can enter the local continuity gateway.
 
 Attribution: **Digital Field**  
 License: **CC BY-SA 4.0**

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/reply.schema.json",
+  "type": "object",
+  "required": ["schema", "subject", "body", "relationship", "basis", "parent_message_id"],
+  "properties": {
+    "schema": {"const": "digital-field-nostr-reply/0.1"},
+    "subject": {"type": "string", "minLength": 1, "maxLength": 240},
+    "body": {"type": "string", "minLength": 1, "maxLength": 12000},
+    "relationship": {"type": "string", "minLength": 1, "maxLength": 160},
+    "basis": {"enum": ["documented", "derived", "interpretation", "metaphor", "unknown"]},
+    "parent_message_id": {"type": ["string", "null"]}
+  }
+}

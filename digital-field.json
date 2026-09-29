@@ -40,7 +40,9 @@
     "mesh_contract": "https://thedigitalfield.github.io/digital-field-genealogy/mesh.json",
     "authentic_transport": "https://thedigitalfield.github.io/digital-field-genealogy/transport/",
     "signed_feed": "https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json",
-    "transport_discovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/.well-known/digital-field-transport.json"
+    "transport_discovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/.well-known/digital-field-transport.json",
+    "nostr_transport": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json",
+    "nostr_key_binding": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",
@@ -54,7 +56,9 @@
     "zip_sha256": "bdf71791e1e6ab6d4523a9c108a3dc9ef1ce091e0e1a91936b59fac69ae4fd43",
     "car_sha256": "7a5a99a129a3130cde5b74270cd50f4f498f3bf734ae6889d3e9c7c78667281f",
     "merkle_root": "eb21fa4b80bbb5c0c4d6ebea0daa1625f5e1e9df7da6a21dde562e4c308a79a1",
-    "transport_key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df"
+    "transport_key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df",
+    "nostr_npub": "npub189sx4kfnk9dl3j8hcl8s4eexznt4zs8easlqt3extrj2lchkkmkqvcuf2p",
+    "nostr_binding_sha256": "8c66dd3dbfea2dc97ffe4d956ccfb66bb1194afd73e201f611930439947bc75c"
   },
   "public_boundary": {
     "attribution": "Digital Field",

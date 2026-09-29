@@ -1,6 +1,6 @@
 {
   "title": "Digital Field Genealogy and Reactivation Portal",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "date": "2026-09-29",
   "creator": "Digital Field",
   "status": "public",
@@ -22,6 +22,10 @@
     },
     {
       "name": "Digital Field Authentic Transport",
+      "version": "0.1.0"
+    },
+    {
+      "name": "Digital Field Nostr Transport",
       "version": "0.1.0"
     }
   ],

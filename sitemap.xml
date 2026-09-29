@@ -36,4 +36,12 @@
     <loc>https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json</loc>
     <lastmod>2026-09-29</lastmod>
   </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
 </urlset>

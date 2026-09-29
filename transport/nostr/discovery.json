@@ -1,0 +1,16 @@
+{
+  "schema": "digital-field-nostr-discovery/0.1",
+  "pubkey": "39606ad933b15bf8c8f7c7cf0ae72614d75140f9ec3e05c72658e4afe2f6b6ec",
+  "npub": "npub189sx4kfnk9dl3j8hcl8s4eexznt4zs8easlqt3extrj2lchkkmkqvcuf2p",
+  "relays": [
+    "wss://relay.damus.io",
+    "wss://nos.lol",
+    "wss://relay.snort.social"
+  ],
+  "event_kind": 30078,
+  "reply_schema": "reply.schema.json",
+  "key_binding": "key-binding.json",
+  "bidirectional": true,
+  "private_memory_embedded": false,
+  "universal_identity_claimed": false
+}
