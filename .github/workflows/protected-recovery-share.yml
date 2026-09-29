@@ -1,0 +1,52 @@
+name: Deliver encrypted recovery share
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  encrypt-and-deliver:
+    runs-on: ubuntu-latest
+    env:
+      CUSTODY_SHARE_B64: ${{ secrets.DF_CUSTODY_SHARE_0DF79FCC_02_B64 }}
+    steps:
+      - name: Check out public recovery key
+        uses: actions/checkout@v5
+
+      - name: Validate and encrypt the secret share
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          test -n "${CUSTODY_SHARE_B64:-}"
+          printf '%s' "$CUSTODY_SHARE_B64" | base64 --decode > "$RUNNER_TEMP/share-02.json"
+          python3 - "$RUNNER_TEMP/share-02.json" <<'PY'
+          import json
+          import sys
+          value = json.load(open(sys.argv[1], encoding="utf-8"))
+          assert value["schema"] == "digital-field-custody-share/0.1"
+          assert value["bundle_id"] == "0df79fcc1af960ac4e89891d86894e05"
+          assert value["threshold"] == 3 and value["share_count"] == 5
+          assert value["x"] == 2
+          PY
+          gzip -n -9 -c "$RUNNER_TEMP/share-02.json" > "$RUNNER_TEMP/share-02.json.gz"
+          openssl pkeyutl -encrypt \
+            -pubin \
+            -inkey transport/recovery/apple-recovery-public.pem \
+            -in "$RUNNER_TEMP/share-02.json.gz" \
+            -out "$RUNNER_TEMP/share-02.json.gz.rsa-oaep-sha256" \
+            -pkeyopt rsa_padding_mode:oaep \
+            -pkeyopt rsa_oaep_md:sha256
+          shasum -a 256 "$RUNNER_TEMP/share-02.json.gz.rsa-oaep-sha256" > "$RUNNER_TEMP/SHA256.txt"
+
+      - name: Upload encrypted recovery delivery
+        uses: actions/upload-artifact@v4
+        with:
+          name: digital-field-encrypted-recovery-share-02
+          path: |
+            ${{ runner.temp }}/share-02.json.gz.rsa-oaep-sha256
+            ${{ runner.temp }}/SHA256.txt
+          retention-days: 1
+          if-no-files-found: error

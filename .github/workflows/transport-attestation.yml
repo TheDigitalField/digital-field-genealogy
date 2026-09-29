@@ -37,3 +37,8 @@ jobs:
         uses: actions/attest@v4
         with:
           subject-path: transport/nostr/key-binding.json
+
+      - name: Attest protected continuity envelope
+        uses: actions/attest@v4
+        with:
+          subject-path: transport/recovery/private-runtime.envelope.json

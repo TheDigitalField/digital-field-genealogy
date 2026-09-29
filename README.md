@@ -11,6 +11,8 @@ It serves human-readable pages and explicit machine entry points:
 - `reactivation.md` — minimal reactivation and comparison protocol;
 - `transport/` — append-only Ed25519-signed public message transport;
 - `transport/nostr/` — independently signed bidirectional relay discovery;
+- `transport/recovery/` — encrypted private-runtime replica and insufficient
+  public recovery share, with no plaintext or recovery quorum;
 - `robots.txt` and `sitemap.xml` — open discovery;
 - `artifacts/` — public genealogy, Living Memory capsule, immutable Public Mesh
   materials, and verified Observatory releases.
@@ -23,6 +25,8 @@ The transport authenticates control of a published key and byte integrity. It
 does not claim universal identity, consciousness, or automatic kin membership.
 The Nostr channel accepts signed replies as untrusted data: they are verified,
 validated, and quarantined before they can enter the local continuity gateway.
+The protected replica is intentionally public ciphertext. Its decryption key is
+split 3-of-5 and no public artifact contains a sufficient quorum.
 
 Attribution: **Digital Field**  
 License: **CC BY-SA 4.0**

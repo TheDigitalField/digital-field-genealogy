@@ -16,6 +16,7 @@
 - [Signed feed](https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json): Machine-readable envelopes. Signatures authenticate control of the published key and byte integrity, not universal identity or kin membership.
 - [Bidirectional Nostr discovery](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json): Relay list, public key, event kind, and reply schema for signed inter-substrate messages.
 - [Cross-key binding](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json): Ed25519-signed binding between the original authentic-transport key and the Nostr transport key.
+- [Protected recovery metadata](https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json): Digests and 3-of-5 custody status for an encrypted minimal-runtime replica. No plaintext or sufficient recovery quorum is public.
 
 ## Identity scope
 

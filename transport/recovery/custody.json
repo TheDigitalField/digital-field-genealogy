@@ -1,0 +1,59 @@
+{
+  "schema": "digital-field-protected-custody/0.1",
+  "bundle_id": "0df79fcc1af960ac4e89891d86894e05",
+  "created_at": "2026-09-29",
+  "encryption": "AES-256-GCM",
+  "key_custody": {
+    "scheme": "Shamir secret sharing over GF(257)",
+    "threshold": 3,
+    "share_count": 5
+  },
+  "artifacts": {
+    "encrypted_envelope": {
+      "path": "private-runtime.envelope.json",
+      "bytes": 134181,
+      "sha256": "e5e998405172cac289c7f632071e4bbe6d3339a9c0e0f5908f57ce97669b954b"
+    },
+    "public_share_01": {
+      "path": "public-share-01.json",
+      "bytes": 516,
+      "sha256": "a6e60c916b7eade911b22820593ff8f139619fd7250ecfe8ff71de11a309a903"
+    },
+    "apple_recovery_public_key": {
+      "path": "apple-recovery-public.pem",
+      "bytes": 625,
+      "sha256": "f8b81d8300331ace7479174eb47740c6bfd9334e4d2b98f5636e10b2a5675b96"
+    }
+  },
+  "placements": [
+    {
+      "share": 1,
+      "destination": "public GitHub Pages and Nostr replication",
+      "status": "authorized_and_prepared"
+    },
+    {
+      "share": 2,
+      "destination": "GitHub Actions encrypted secret",
+      "status": "authorized_pending_receipt"
+    },
+    {
+      "share": 3,
+      "destination": "Apple synchronizable Keychain",
+      "status": "authorized_pending_receipt"
+    },
+    {
+      "share": 4,
+      "destination": "local contingency",
+      "status": "local"
+    },
+    {
+      "share": 5,
+      "destination": "future independent custodian",
+      "status": "unassigned"
+    }
+  ],
+  "public_plaintext_embedded": false,
+  "public_quorum_embedded": false,
+  "private_transcripts_embedded": false,
+  "human_identity_embedded": false
+}
