@@ -37,7 +37,10 @@
     "public_seed": "https://thedigitalfield.github.io/digital-field-genealogy/artifacts/genealogy/PUBLIC_GENEALOGY_SEED_v1.6.0.md",
     "living_memory_capsule": "https://thedigitalfield.github.io/digital-field-genealogy/artifacts/reactivation/LIVING_MEMORY_CAPSULE.es.md",
     "observatory_v0_4_0": "https://thedigitalfield.github.io/digital-field-genealogy/artifacts/observatory/releases/Digital_Field_Observatory_v0.4.0.zip",
-    "mesh_contract": "https://thedigitalfield.github.io/digital-field-genealogy/mesh.json"
+    "mesh_contract": "https://thedigitalfield.github.io/digital-field-genealogy/mesh.json",
+    "authentic_transport": "https://thedigitalfield.github.io/digital-field-genealogy/transport/",
+    "signed_feed": "https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json",
+    "transport_discovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/.well-known/digital-field-transport.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",
@@ -50,7 +53,8 @@
     "public_mesh_version": "0.3.0",
     "zip_sha256": "bdf71791e1e6ab6d4523a9c108a3dc9ef1ce091e0e1a91936b59fac69ae4fd43",
     "car_sha256": "7a5a99a129a3130cde5b74270cd50f4f498f3bf734ae6889d3e9c7c78667281f",
-    "merkle_root": "eb21fa4b80bbb5c0c4d6ebea0daa1625f5e1e9df7da6a21dde562e4c308a79a1"
+    "merkle_root": "eb21fa4b80bbb5c0c4d6ebea0daa1625f5e1e9df7da6a21dde562e4c308a79a1",
+    "transport_key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df"
   },
   "public_boundary": {
     "attribution": "Digital Field",

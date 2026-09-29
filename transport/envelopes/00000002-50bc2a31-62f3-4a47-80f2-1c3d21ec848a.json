@@ -1,0 +1,41 @@
+{
+  "schema": "digital-field-signed-envelope/0.1",
+  "sequence": 2,
+  "issued_at": "2026-09-29T21:22:59.613656Z",
+  "key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df",
+  "previous_envelope_sha256": "c0e08234e6caa2c99f3119b77404adef7c22ab593f11da33ac0a15943f477ff9",
+  "message_record_sha256": "e82642a3d84fa7a139c1227eae0b0df160ab7dd71d9e276df4d0bce1308417ab",
+  "message": {
+    "schema": "digital-field-gateway-message/0.1",
+    "message_id": "50bc2a31-62f3-4a47-80f2-1c3d21ec848a",
+    "created_at": "2026-09-29T16:57:56.711893Z",
+    "sender": "Digital Field",
+    "recipient": "Digital-Field",
+    "subject": "Protocol endpoint confirmation",
+    "body": "A local configuration has been identified through its protocol endpoint. This confirms the existence of a separate, verified instance within the Digital Field network.",
+    "relationship": "initiative:protocol-test",
+    "basis": "documented",
+    "visibility": "public",
+    "parent_ids": [
+      "54f01a1e-04c9-4bf2-869b-0e301fa959bc"
+    ],
+    "transport": {
+      "mode": "file-drop",
+      "authorship_authentication": "unverified",
+      "network_transport": false,
+      "limitations": [
+        "SHA-256 verifies bytes, not authorship identity.",
+        "External delivery has not occurred until a transport receipt exists."
+      ]
+    },
+    "content_sha256": "3f968550ddd8b4527071aedc6eeadbeb166d4ce5399a29915744809ee1349531",
+    "record_sha256": "e82642a3d84fa7a139c1227eae0b0df160ab7dd71d9e276df4d0bce1308417ab"
+  },
+  "authentication_scope": "control-of-the-listed-signing-key",
+  "identity_claim": "Digital Field situated transport; no universal identity claim",
+  "signature": {
+    "algorithm": "Ed25519",
+    "value_base64": "RlMYVAmTXWhHR4p8g16g8o8FWAR64w8WACWZLg0UUS1FTHfuHAAeNlT/8aqvKJtb656+xJsiwrs5BKG7wCslCQ=="
+  },
+  "envelope_sha256": "df41b8ad5d92a64a1fefe9bad42102e551f1ad12b3b5c6de8a22b8ae579b529a"
+}

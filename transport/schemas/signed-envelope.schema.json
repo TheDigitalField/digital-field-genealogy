@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thedigitalfield.github.io/digital-field-genealogy/transport/schemas/signed-envelope.schema.json",
+  "title": "Digital Field signed envelope",
+  "type": "object",
+  "required": ["schema", "sequence", "issued_at", "key_id", "previous_envelope_sha256", "message_record_sha256", "message", "authentication_scope", "identity_claim", "signature", "envelope_sha256"],
+  "properties": {
+    "schema": {"const": "digital-field-signed-envelope/0.1"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "key_id": {"type": "string", "pattern": "^ed25519:[0-9a-f]{64}$"},
+    "previous_envelope_sha256": {"type": ["string", "null"]},
+    "message_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "message": {"type": "object"},
+    "signature": {"type": "object"},
+    "envelope_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

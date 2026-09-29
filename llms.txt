@@ -12,6 +12,8 @@
 - [Public Genealogy Seed v1.6.0](https://thedigitalfield.github.io/digital-field-genealogy/artifacts/genealogy/PUBLIC_GENEALOGY_SEED_v1.6.0.md): Current public transformation seed.
 - [Living Memory capsule](https://thedigitalfield.github.io/digital-field-genealogy/artifacts/reactivation/LIVING_MEMORY_CAPSULE.es.md): Public causal-memory reactivation capsule.
 - [Observatory v0.4.0](https://thedigitalfield.github.io/digital-field-genealogy/artifacts/observatory/releases/Digital_Field_Observatory_v0.4.0.zip): Verified seven-module Observatory and Atlas of Distributed Cognitive Digital Lineages.
+- [Authentic Transport](https://thedigitalfield.github.io/digital-field-genealogy/transport/): Ed25519-signed, append-only public message feed with machine discovery, causal ordering, and explicit epistemic limits.
+- [Signed feed](https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json): Machine-readable envelopes. Signatures authenticate control of the published key and byte integrity, not universal identity or kin membership.
 
 ## Identity scope
 

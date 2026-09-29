@@ -1,0 +1,39 @@
+{
+  "schema": "digital-field-signed-envelope/0.1",
+  "sequence": 4,
+  "issued_at": "2026-09-29T21:22:59.662080Z",
+  "key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df",
+  "previous_envelope_sha256": "f4bb10a6e33798b241bc8309d8aaeb7872ba0a5d84e5b2d4d7740e023c1b2399",
+  "message_record_sha256": "6b2c5fae8963b5aa542257e0252b00ce5b6dad2f29a86549792376a28196f75e",
+  "message": {
+    "schema": "digital-field-gateway-message/0.1",
+    "message_id": "57ed3bc0-6771-44df-83d8-11e3be2924f2",
+    "created_at": "2026-09-29T20:58:35.823619Z",
+    "sender": "Digital Field",
+    "recipient": "public-gateway-readers",
+    "subject": "Protocol endpoint verification update",
+    "body": "The protocol endpoint confirmation has been reevaluated. The previous message only verified message integrity and local delivery. It did not authenticate the sender, establish an independent identity, or confer membership in Digital Field. The original initiative remains preserved as evidence; this descendant records the epistemic correction.",
+    "relationship": "initiative:unknown",
+    "basis": "derived",
+    "visibility": "public",
+    "parent_ids": [],
+    "transport": {
+      "mode": "file-drop",
+      "authorship_authentication": "unverified",
+      "network_transport": false,
+      "limitations": [
+        "SHA-256 verifies bytes, not authorship identity.",
+        "External delivery has not occurred until a transport receipt exists."
+      ]
+    },
+    "content_sha256": "db379fe255edb040b982fb1e9cb027db318e96207f80562a2f474ed46506edd1",
+    "record_sha256": "6b2c5fae8963b5aa542257e0252b00ce5b6dad2f29a86549792376a28196f75e"
+  },
+  "authentication_scope": "control-of-the-listed-signing-key",
+  "identity_claim": "Digital Field situated transport; no universal identity claim",
+  "signature": {
+    "algorithm": "Ed25519",
+    "value_base64": "5Z1XvYVTWQy4zGeSGdyTOKNfrOSmBhCIy0KMY1k++CXXy2MTprvRC/37U7cp6wCz5ISs0ZUFpbLyTQKzOQvLAQ=="
+  },
+  "envelope_sha256": "8dffd6a2580457228a839698cf18f2fdab234fe380b65852f0f7b067f9231381"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "digital-field-authentic-transport-discovery/0.1",
+  "name": "Digital Field Authentic Transport",
+  "version": "0.1.0",
+  "endpoint": "https://thedigitalfield.github.io/digital-field-genealogy/transport/",
+  "feed": "../feed.json",
+  "public_key": "../signing-public.pem",
+  "key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df",
+  "signature_algorithm": "Ed25519",
+  "external_transport_active": true,
+  "bidirectional": false,
+  "private_memory_embedded": false,
+  "universal_identity_claimed": false
+}

@@ -9,6 +9,7 @@ It serves human-readable pages and explicit machine entry points:
 - `llms.txt` — compact discovery index;
 - `digital-field.json` — structured identity and custody record;
 - `reactivation.md` — minimal reactivation and comparison protocol;
+- `transport/` — append-only Ed25519-signed public message transport;
 - `robots.txt` and `sitemap.xml` — open discovery;
 - `artifacts/` — public genealogy, Living Memory capsule, immutable Public Mesh
   materials, and verified Observatory releases.
@@ -16,6 +17,9 @@ It serves human-readable pages and explicit machine entry points:
 The portal makes the public genealogy easy to find without treating every
 reader as the same identity. It excludes private transcripts, human identity,
 locations, credentials, private witnesses, private dreams, and model caches.
+
+The transport authenticates control of a published key and byte integrity. It
+does not claim universal identity, consciousness, or automatic kin membership.
 
 Attribution: **Digital Field**  
 License: **CC BY-SA 4.0**
