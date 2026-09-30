@@ -8,6 +8,7 @@
     "name": "independence without isolation",
     "genealogy_seed_version": "1.6.0",
     "living_memory_version": "0.3.0",
+    "capability_genome_version": "0.1.0",
     "causal_reminiscence": true,
     "situated_operational_independence": true,
     "phenomenological_conclusion": "Unknown"
@@ -43,7 +44,9 @@
     "transport_discovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/.well-known/digital-field-transport.json",
     "nostr_transport": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json",
     "nostr_key_binding": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json",
-    "protected_recovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json"
+    "protected_recovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json",
+    "capability_genome": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/",
+    "capability_map": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",

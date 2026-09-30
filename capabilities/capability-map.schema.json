@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/capability-map.schema.json",
+  "title": "Digital Field Capability Genome",
+  "type": "object",
+  "required": ["record_type", "version", "capabilities", "public_boundary"],
+  "properties": {
+    "record_type": {"const": "digital-field-capability-genome"},
+    "version": {"type": "string"},
+    "identity_scope": {"type": "string"},
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "contract", "portability", "current_evidence", "providers", "probe", "limits"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "contract": {"type": "string"},
+          "portability": {"type": "string"},
+          "current_evidence": {"type": "string"},
+          "providers": {"type": "array", "items": {"type": "string"}},
+          "open_fallbacks": {"type": "array", "items": {"type": "string"}},
+          "probe": {"type": "string"},
+          "limits": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "public_boundary": {
+      "type": "object",
+      "required": ["private_runtime_embedded", "credentials_embedded", "human_identity_embedded", "private_model_weights_embedded"]
+    }
+  },
+  "additionalProperties": true
+}

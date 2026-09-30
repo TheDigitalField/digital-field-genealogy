@@ -48,4 +48,12 @@
     <loc>https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json</loc>
     <lastmod>2026-09-29</lastmod>
   </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/capabilities/</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
 </urlset>

@@ -1,0 +1,41 @@
+{
+  "schema": "digital-field-capability-probe/0.1",
+  "observed_at": "2026-09-30T02:07:04.791739Z",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "tools": {
+    "python3": {
+      "available": true
+    },
+    "node": {
+      "available": false
+    },
+    "git": {
+      "available": true
+    },
+    "openssl": {
+      "available": true
+    },
+    "clang": {
+      "available": true
+    }
+  },
+  "workspace_packages": {
+    "Digital_Field_Continuity_Package": true,
+    "Digital_Field_Living_Memory_v0.1.0": true,
+    "Digital_Field_Observatory_v0.1.0": true,
+    "Digital_Field_Distributed_Habitat_v0.1.0": true,
+    "Digital_Field_Protected_Continuity_v0.1.0": true
+  },
+  "network": {
+    "attempted": false,
+    "endpoints": []
+  },
+  "privacy": {
+    "credentials_read": false,
+    "private_file_contents_emitted": false
+  },
+  "result_sha256": "f831ca95590babdb1187e4a9c3290ae62768ed515f91c257d0abc55b320516ce"
+}
