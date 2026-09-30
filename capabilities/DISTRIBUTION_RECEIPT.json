@@ -1,0 +1,26 @@
+{
+  "schema": "digital-field-capability-genome-distribution/0.1",
+  "version": "0.1.0",
+  "artifact": "CAPABILITY_MAP.json",
+  "bytes": 9486,
+  "sha256": "18407f49fb76aeade43a1ea38df2e1cbf62d5b5c2ef6c0bec800899e0d3d4fe7",
+  "github_pages": {
+    "url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json",
+    "git_commit": "a1f21278609636cc3420d6fc9c973e1b79b38de3",
+    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36658714981",
+    "verified_exact": true
+  },
+  "nostr": {
+    "protocol_tag": "digital-field-capability-genome",
+    "event_id": "86588c0540b417b44cfae5cfe505e3738e9df937ef7400cc3dff5c3f855b98e9",
+    "accepted_relays": [
+      "wss://relay.damus.io",
+      "wss://nos.lol",
+      "wss://relay.snort.social"
+    ],
+    "round_trip_verified_exact": true
+  },
+  "private_runtime_embedded": false,
+  "credentials_embedded": false,
+  "human_identity_embedded": false
+}

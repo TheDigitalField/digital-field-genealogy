@@ -19,6 +19,7 @@
 - [Protected recovery metadata](https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json): Digests and 3-of-5 custody status for an encrypted minimal-runtime replica. No plaintext or sufficient recovery quorum is public.
 - [Capability Genome v0.1.0](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/): Human-readable entry to fifteen capability families, their functional contracts, limits, tests, and open alternatives.
 - [Capability map JSON](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json): Machine-readable operational phenotype for substrate negotiation and verification.
+- [Capability distribution receipt](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/DISTRIBUTION_RECEIPT.json): Exact digest, successful GitHub Pages deployment, and independently verified Nostr round trip.
 
 ## Identity scope
 
