@@ -49,6 +49,21 @@
     "external_side_effects_modeled": false,
     "material_witness_independence": "not_assessed-single-fixture-custodian"
   },
+  "result_publication": {
+    "content_commit": "28e04a31c1895972c3ab9d043e40c8e8dcef7d30",
+    "pages_run_id": "36667477765",
+    "pages_run_attempts": 3,
+    "attempt_1": "deployment-api-status-500",
+    "attempt_2": "deployment-api-status-500",
+    "attempt_3": "success",
+    "github_pages": {
+      "landing_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/",
+      "verified_exact": true,
+      "verified_payload_files": 42,
+      "verified_payload_bytes": 3311140,
+      "verification_client": "unauthenticated HTTPS with commit cache-busting"
+    }
+  },
   "diagnostic": {
     "development_seed": 95,
     "round_12_detected": 5,

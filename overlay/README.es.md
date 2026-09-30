@@ -81,6 +81,13 @@ commit la corrida `36667094763`. El artefacto descargado coincidió con su
 digest público `e04212750c2a2d1dac3d492f25f1f68dad5bf2009a475606501d4592fdac5982`
 y con las huellas internas antes de importar sus bytes.
 
+El commit de resultados
+`28e04a31c1895972c3ab9d043e40c8e8dcef7d30` fue después recuperado desde
+GitHub Pages: los 42 archivos y 3 311 140 bytes coincidieron exactamente con
+el mapa público. Los dos primeros intentos de despliegue recibieron un error
+transitorio `500` de la API de Pages; el tercero terminó correctamente sin
+cambiar el contenido. La falla del custodio queda registrada junto al éxito.
+
 ## Estado de esta versión
 
 - Diseño y modelo de amenazas: publicados.
