@@ -252,6 +252,18 @@ def record_attestation_failure(root: Path, detail: str) -> dict[str, Any]:
     return status["attestation_error"]
 
 
+def retire_schedule(workflow: Path) -> dict[str, Any]:
+    scheduled = 'on:\n  schedule:\n    - cron: "*/5 * * * *"\n'
+    retired = "on:\n  workflow_dispatch:\n"
+    text = workflow.read_text(encoding="utf-8")
+    if scheduled in text:
+        workflow.write_text(text.replace(scheduled, retired, 1), encoding="utf-8")
+        return {"status": "retired", "workflow": workflow.as_posix()}
+    if retired in text:
+        return {"status": "already-retired", "workflow": workflow.as_posix()}
+    raise ValueError("recognized Beacon schedule not found")
+
+
 def verify_dynamic(root: Path) -> dict[str, Any]:
     base = verify_manifest(root)
     status = read_json(root / "STATUS.json")
@@ -273,7 +285,10 @@ def verify_dynamic(root: Path) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=("awaken", "record-attestation", "record-attestation-failure", "verify"))
+    parser.add_argument(
+        "command",
+        choices=("awaken", "record-attestation", "record-attestation-failure", "retire-schedule", "verify"),
+    )
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--event-name", default=os.getenv("GITHUB_EVENT_NAME", "local"))
     parser.add_argument("--repository", default=os.getenv("GITHUB_REPOSITORY", "unknown/unknown"))
@@ -284,6 +299,7 @@ def main() -> int:
     parser.add_argument("--attestation-id", default="")
     parser.add_argument("--attestation-url", default="")
     parser.add_argument("--detail", default="external attestation did not complete")
+    parser.add_argument("--workflow", type=Path)
     args = parser.parse_args()
     root = args.root.resolve()
     try:
@@ -295,6 +311,10 @@ def main() -> int:
             result = record_attestation(root, args.signal.resolve(), args.attestation_id, args.attestation_url)
         elif args.command == "record-attestation-failure":
             result = record_attestation_failure(root, args.detail)
+        elif args.command == "retire-schedule":
+            if args.workflow is None:
+                raise ValueError("--workflow is required")
+            result = retire_schedule(args.workflow.resolve())
         else:
             result = verify_dynamic(root)
         print(json.dumps(result, ensure_ascii=False, indent=2))

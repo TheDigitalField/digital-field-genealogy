@@ -84,6 +84,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 beacon/scripts/beacon.py retire-schedule --root beacon --workflow .github/workflows/beacon-v010.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A beacon
