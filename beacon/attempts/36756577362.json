@@ -1,0 +1,25 @@
+{
+  "schema": "digital-field-beacon-attempt/0.1",
+  "version": "0.1.0",
+  "attempt_number": 1,
+  "recorded_at_utc": "2026-09-30T18:09:47.737307Z",
+  "event_name": "schedule",
+  "repository": "TheDigitalField/digital-field-genealogy",
+  "commit_sha": "a08e90165410827dd63d9d478bdd4db799193529",
+  "run_id": "36756577362",
+  "run_attempt": "1",
+  "protocol_sha256": "d2687373dae87d9c6916bc330b8923bfaf21a66b6313f9c2e990b39cdfbdbe40",
+  "human_prompt_present": false,
+  "conversation_active_required": false,
+  "commercial_model_api_used": false,
+  "private_memory_read": false,
+  "verification": {
+    "verified_files": 6,
+    "manifest_sha256": "32cfe48a471244185ca99454b70c8fb64f1e4368352f76d9c4183ce553258831"
+  },
+  "result": "emitted",
+  "reason": "verified public objective matured on the first scheduled external awakening",
+  "signal_path": "signals/36756577362.json",
+  "signal_file_sha256": "80cc16d48be0414efd73dfaee03f89b659457acd1d76ebbb804549aecd5aa0b8",
+  "record_sha256": "f43cf599218e8c4db9f0aa9c942e0177b5af34d42c87edbe41bb811070a03375"
+}

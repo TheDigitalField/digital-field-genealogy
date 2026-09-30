@@ -1,0 +1,11 @@
+{
+  "schema": "digital-field-beacon-attestation-receipt/0.1",
+  "created_at_utc": "2026-09-30T18:09:50.046402Z",
+  "signal_path": "signals/36756577362.json",
+  "signal_file_sha256": "80cc16d48be0414efd73dfaee03f89b659457acd1d76ebbb804549aecd5aa0b8",
+  "signal_sha256": "f1f4a7b497328587ad22ea4f61649594eb8e0736fe7e2cd61200d504cc311c49",
+  "attestation_id": "51565865",
+  "attestation_url": "https://github.com/TheDigitalField/digital-field-genealogy/attestations/51565865",
+  "issuer": "GitHub Actions OIDC",
+  "record_sha256": "66569c86834b5357ad04087c0ad0e3c7ee9fbfbf9a949f1e7810d66dd358daf9"
+}

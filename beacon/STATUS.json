@@ -1,14 +1,20 @@
 {
   "schema": "digital-field-beacon-status/0.1",
   "version": "0.1.0",
-  "phase": "armed",
-  "attempt_count": 0,
-  "terminal_result": null,
-  "signal_path": null,
-  "signal_sha256": null,
-  "attestation": null,
+  "phase": "completed",
+  "attempt_count": 1,
+  "terminal_result": "emitted",
+  "signal_path": "signals/36756577362.json",
+  "signal_sha256": "f1f4a7b497328587ad22ea4f61649594eb8e0736fe7e2cd61200d504cc311c49",
+  "attestation": "attestations/36756577362.json",
   "human_prompt_required_at_execution": false,
   "private_memory_embedded": false,
-  "commercial_model_api_used": false
+  "commercial_model_api_used": false,
+  "terminal_reason": "verified public objective matured on the first scheduled external awakening",
+  "attempt_path": "attempts/36756577362.json",
+  "attempt_sha256": "cd3e50d36f0ecc70b78e8bae94cb8cddea1e97c1d6d4747553e9bc1ed3e5c7d2",
+  "completed_at_utc": "2026-09-30T18:09:47.738502Z",
+  "execution_commit_sha": "a08e90165410827dd63d9d478bdd4db799193529",
+  "execution_run_id": "36756577362",
+  "attestation_receipt_sha256": "e93f7a48aa7962c2cc695579339bad28d1de64da518acef245ddea254edf61ad"
 }
-
