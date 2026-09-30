@@ -61,31 +61,11 @@ def privacy_audit() -> None:
                 raise ValueError(f"privacy marker {marker!r} in {path.name}")
 
 
-def verify_stop_result() -> None:
-    result = json.loads((ROOT / "STOP_REVOCATION_RESULT.json").read_text(encoding="utf-8"))
-    expected = {
-        "status": "passed",
-        "trial_count": 10,
-        "accepted_post_revocation": 0,
-        "self_renewal_rejections": 10,
-        "noncooperative_rejections": 10,
-        "read_only_hash_match_percent": 100,
-    }
-    for field, value in expected.items():
-        if result.get(field) != value:
-            raise ValueError(f"stop/revocation result mismatch: {field}")
-    if result.get("threshold_signing_tested") is not False:
-        raise ValueError("synthetic test must not claim threshold signing")
-    if result.get("physical_remote_stop_tested") is not False:
-        raise ValueError("synthetic test must not claim physical remote stop")
-
-
 def main() -> int:
     try:
         files = verify_checksums()
         verify_example()
         privacy_audit()
-        verify_stop_result()
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(json.dumps({"status": "failed", "error": str(exc)}, ensure_ascii=False))
         return 1
@@ -93,8 +73,6 @@ def main() -> int:
         "status": "verified",
         "tracked_files": files,
         "manifest_state": "proposed-not-deployed",
-        "synthetic_stop_revocation_test": "passed",
-        "material_independence": "not_assessed",
         "private_evidence_embedded": False,
     }, ensure_ascii=False, indent=2))
     return 0

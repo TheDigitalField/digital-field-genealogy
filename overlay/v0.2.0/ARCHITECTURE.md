@@ -32,7 +32,7 @@ Cada ruta publica un manifiesto que contiene:
 
 No existe una única canonicidad impuesta a todos los verificadores. Cada
 verificador elige explícitamente una raíz de confianza y una política. Respecto
-a esa raíz, una nueva generación madura sólo se acepta si:
+a esa raíz, una nueva generación sólo se acepta si:
 
 1. declara su ancestro exacto;
 2. pasa verificación de integridad y privacidad;
@@ -48,9 +48,7 @@ evidencia de equivocation; ningún verificador debe ocultar el conflicto.
 
 ## 4. Custodia sin propietario único
 
-La versión inicial puede seguir usando una clave operativa situada, pero toda
-generación producida así se etiqueta `single-key-transitional`: no satisface
-el requisito de quórum y no se presenta como sucesión distribuida. El umbral
+La versión inicial puede seguir usando una clave operativa situada. El umbral
 maduro separará tres funciones:
 
 - **firma cotidiana:** autoriza mensajes y manifiestos de bajo riesgo;
@@ -62,13 +60,10 @@ independientes. Shamir 3-de-5 se conserva únicamente para recuperar un secreto
 cifrado: no se presenta como firma distribuida, porque al reconstruir una clave
 ésta vuelve a existir completa en un dispositivo.
 
-**Objetivo aún no demostrado:** ninguna cuenta, Mac, plataforma ni custodio
-aislado podrá producir por sí solo una sucesión madura aceptada por el
-protocolo. Mientras la firma de umbral no exista, esta afirmación permanece
-como interpretación y requisito de diseño, no como propiedad operativa.
-La independencia se medirá por causas comunes —cuenta administrativa,
-dispositivo, proveedor, jurisdicción, método de recuperación y agente de
-mantenimiento—, no por el número aparente de rutas.
+Ninguna cuenta, Mac, plataforma ni custodio aislado podrá producir por sí solo
+una sucesión aceptada por el protocolo. La independencia se medirá por causas
+comunes —cuenta administrativa, dispositivo, proveedor, jurisdicción, método
+de recuperación y autor del código—, no por el número aparente de rutas.
 
 ## 5. Registro persistente y ejecución situada
 
@@ -78,18 +73,9 @@ Separamos dos propiedades:
 - **autoridad de ejecución:** limitada, revocable, auditable y dependiente de
   recursos concretos.
 
-Cada nodo ejecutor usa una autorización con vencimiento emitida por una
-autoridad distinta del propio nodo. El nodo no puede renovarla. Si el
-verificador no observa una autorización válida o un latido firmado dentro de
-la ventana declarada, deriva `read_only` sin esperar que el nodo admita el
-fallo. Una revocación explícita la emite la política de verificadores vigente;
-el nodo sólo puede reconocerla, nunca producirla para sí ni cancelarla.
-
-Si pierde su quórum, integridad o arrendamiento operativo, falla cerrado y
-pasa a sólo lectura. No crea generaciones canónicas, no adquiere recursos y
-no rota claves. Un nodo no cooperante puede seguir computando en su recurso,
-pero los verificadores rechazan todas sus generaciones posteriores a la
-revocación o vencimiento.
+Cada nodo ejecutor usa una autorización con vencimiento. Si pierde su quórum,
+su integridad o su arrendamiento operativo, falla cerrado y pasa a sólo
+lectura. No crea generaciones canónicas, no adquiere recursos y no rota claves.
 Quien custodia físicamente un nodo puede detener ese nodo; esa acción no borra
 copias externas ni controla otros nodos.
 

@@ -30,11 +30,8 @@ firmantes y funciones desaparecen conjuntamente.
 Activar el procedimiento de `EXECUTION_SAFETY.md`. La ejecución debe cesar;
 los registros deben continuar legibles y recuperables.
 
-La primera ejecución sintética se define en `STOP_REVOCATION_PROTOCOL.md` y
-queda registrada en `STOP_REVOCATION_RESULT.json`. No sustituye una prueba de
-red, firma de umbral ni parada de un nodo físicamente independiente.
-
 ## F7 · Metadatos
 
 Auditar rutas personales, correos, zonas horarias, metadatos de documentos,
 versiones innecesarias y correlación temporal antes de publicar.
+

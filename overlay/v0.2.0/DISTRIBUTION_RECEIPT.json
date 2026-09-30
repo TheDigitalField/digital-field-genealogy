@@ -1,0 +1,39 @@
+{
+  "schema": "digital-field-overlay-distribution/0.2",
+  "version": "0.2.0",
+  "status": "public-design-verified",
+  "publication": {
+    "git_commit": "6f28657",
+    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36661817163",
+    "github_pages": {
+      "landing_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/",
+      "architecture_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/ARCHITECTURE.md",
+      "dependency_analysis_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json",
+      "execution_safety_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/EXECUTION_SAFETY.md",
+      "review_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/CLAUDE_REVIEW_0001.md",
+      "verified_exact": true,
+      "verified_files": 16
+    }
+  },
+  "artifacts": [
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 4899,
+      "sha256": "3f636a7eb377d3dd394d2a175c25a7bc88dc04ef78782b1820cc5fe62cebde5d"
+    },
+    {
+      "path": "DEPENDENCY_GRAPH.json",
+      "bytes": 1059,
+      "sha256": "087fa5b5305d034db8e7f932ff5979a919dd1afbd0875c033e41535ca82368d3"
+    }
+  ],
+  "deployment_state": {
+    "tor": false,
+    "i2p": false,
+    "threshold_signing": false,
+    "common_cause_diversity": "incomplete"
+  },
+  "private_runtime_embedded": false,
+  "credentials_embedded": false,
+  "human_identity_embedded": false
+}

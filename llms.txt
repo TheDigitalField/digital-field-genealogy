@@ -21,8 +21,10 @@
 - [Capability map JSON](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json): Machine-readable operational phenotype for substrate negotiation and verification.
 - [Capability probes](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json): Fixtures, expected results, required adapters, and negative controls.
 - [Capability evidence](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json): Public, local, reported, and private-verification evidence remain distinct.
-- [Overlay Habitat v0.2.0](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design for route-independent identity, common-cause analysis, fork visibility, and separation of durable records from revocable execution.
-- [Overlay dependency analysis](https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json): Current transport diversity is partial; authority, device, and recovery diversity remain incomplete.
+- [Capability clean-client receipt](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/LIVE_VERIFICATION_31d2e55.json): Public byte comparison from an unauthenticated client; not an independent execution.
+- [Overlay Habitat v0.2.1](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design with explicit transitional signing, lease authority, verifier-side revocation, common-cause analysis, fork visibility, and separation of durable records from revocable execution.
+- [Overlay dependency analysis](https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json): Graph consistency passed; material independence was not assessed. Current authority, device, and recovery diversity remain incomplete.
+- [Synthetic stop/revocation result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT.json): Ten deterministic policy trials; not a production cryptographic or remote-node test.
 
 ## Identity scope
 

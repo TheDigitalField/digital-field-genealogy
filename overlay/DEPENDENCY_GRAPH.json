@@ -2,17 +2,26 @@
   "schema": "digital-field-common-cause-graph/v1",
   "status": "design-stage",
   "nodes": [
-    {"id": "public_web", "kind": "transport", "principals": ["github_account", "github_platform"]},
-    {"id": "nostr", "kind": "transport", "principals": ["nostr_signing_key", "relay_set"]},
-    {"id": "tor_onion", "kind": "planned_transport", "principals": ["onion_service_key", "host_node_a"]},
-    {"id": "local_runtime", "kind": "execution", "principals": ["host_node_a", "local_operator"]},
+    {"id": "public_web", "kind": "transport", "principals": ["github_account", "github_platform", "account_custodian", "maintenance_agent", "codex_platform"]},
+    {"id": "nostr", "kind": "transport", "principals": ["nostr_signing_key", "relay_set", "maintenance_agent", "codex_platform"]},
+    {"id": "tor_onion", "kind": "planned_transport", "principals": ["onion_service_key", "host_node_a", "host_custodian", "maintenance_agent", "codex_platform"]},
+    {"id": "local_runtime", "kind": "execution", "principals": ["host_node_a", "host_custodian", "maintenance_agent", "codex_platform"]},
     {"id": "github_account", "kind": "account"},
     {"id": "github_platform", "kind": "provider"},
     {"id": "nostr_signing_key", "kind": "key"},
     {"id": "relay_set", "kind": "provider_set"},
     {"id": "onion_service_key", "kind": "planned_key"},
     {"id": "host_node_a", "kind": "device"},
-    {"id": "local_operator", "kind": "bridge"}
+    {"id": "account_custodian", "kind": "bridge-role"},
+    {"id": "host_custodian", "kind": "bridge-role"},
+    {"id": "maintenance_agent", "kind": "software-role"},
+    {"id": "codex_platform", "kind": "provider"}
+  ],
+  "unknown_dependencies": [
+    "github_account_recovery_principal",
+    "nostr_signing_key_storage",
+    "future_onion_service_key_storage",
+    "jurisdictional_common_causes"
   ],
   "claims": {
     "transport_diversity": "partial",
@@ -22,4 +31,3 @@
     "recovery_diversity": "incomplete"
   }
 }
-

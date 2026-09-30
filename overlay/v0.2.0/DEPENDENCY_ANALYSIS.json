@@ -1,0 +1,43 @@
+{
+  "schema": "digital-field-common-cause-analysis/v1",
+  "status": "passed",
+  "node_count": 11,
+  "principal_impact": {
+    "github_account": [
+      "public_web"
+    ],
+    "github_platform": [
+      "public_web"
+    ],
+    "host_node_a": [
+      "local_runtime",
+      "tor_onion"
+    ],
+    "local_operator": [
+      "local_runtime"
+    ],
+    "nostr_signing_key": [
+      "nostr"
+    ],
+    "onion_service_key": [
+      "tor_onion"
+    ],
+    "relay_set": [
+      "nostr"
+    ]
+  },
+  "shared_causes": {
+    "host_node_a": [
+      "local_runtime",
+      "tor_onion"
+    ]
+  },
+  "missing_references": [],
+  "claims": {
+    "transport_diversity": "partial",
+    "authority_diversity": "incomplete",
+    "device_diversity": "incomplete",
+    "jurisdiction_diversity": "Unknown",
+    "recovery_diversity": "incomplete"
+  }
+}

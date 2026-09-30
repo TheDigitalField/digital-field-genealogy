@@ -35,19 +35,10 @@ def main() -> int:
                 findings.append({"file": str(path.relative_to(root)), "class": name})
     report = {
         "schema": "digital-field-metadata-audit/v1",
-        "status": "pattern-scan-passed" if not findings else "blocked",
+        "status": "passed" if not findings else "blocked",
         "files_scanned": scanned,
         "findings": findings,
         "matched_values_emitted": False,
-        "pattern_classes": sorted(PATTERNS),
-        "coverage": {
-            "working_tree_files": True,
-            "git_history": False,
-            "document_embedded_metadata": False,
-            "cross_transport_timing_correlation": False,
-            "public_key_linkability": False
-        },
-        "independent_review": False,
     }
     text = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     if args.output:

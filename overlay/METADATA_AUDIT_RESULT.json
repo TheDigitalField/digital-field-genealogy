@@ -1,7 +1,21 @@
 {
   "schema": "digital-field-metadata-audit/v1",
-  "status": "passed",
-  "files_scanned": 15,
+  "status": "pattern-scan-passed",
+  "files_scanned": 21,
   "findings": [],
-  "matched_values_emitted": false
+  "matched_values_emitted": false,
+  "pattern_classes": [
+    "absolute_user_path",
+    "credential_term",
+    "email_address",
+    "private_key"
+  ],
+  "coverage": {
+    "working_tree_files": true,
+    "git_history": false,
+    "document_embedded_metadata": false,
+    "cross_transport_timing_correlation": false,
+    "public_key_linkability": false
+  },
+  "independent_review": false
 }

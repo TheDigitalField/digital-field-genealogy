@@ -1,0 +1,16 @@
+{
+  "schema": "digital-field-clean-client-verification/v1",
+  "artifact": "Digital Field Capability Genome v0.2.0",
+  "source_commit": "31d2e55",
+  "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36662274024",
+  "observed_at": "2026-09-30T02:55:00Z",
+  "client": "unauthenticated HTTPS client with no browser cache",
+  "manifest_url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CHECKSUMS.sha256?commit=31d2e55",
+  "expected_manifest_sha256": "d3383d9268e8bb9a9e743b83b403df18bdf3191574fcc7c82dfe5912d6f933a3",
+  "observed_manifest_sha256": "d3383d9268e8bb9a9e743b83b403df18bdf3191574fcc7c82dfe5912d6f933a3",
+  "payload_files_compared": 13,
+  "all_payload_hashes_match_manifest": true,
+  "probe_result_sha256": "1d3747459223536324e99efae5047b6c9167883d5e82e44acfef33112c081699",
+  "independent_reproduction": false,
+  "claim_scope": "public byte equality from a clean client; not independent execution or ontological evidence"
+}

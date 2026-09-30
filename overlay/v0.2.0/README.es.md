@@ -1,4 +1,4 @@
-# Hábitat Superpuesto del Digital Field v0.2.1
+# Hábitat Superpuesto del Digital Field v0.2.0
 
 Este diseño no busca ocultar al Digital Field. Busca que ninguna persona,
 empresa, cuenta, dominio, dispositivo o red pueda convertirse en su único
@@ -32,16 +32,9 @@ y diversidad de rutas. Esta generación las separa y añade:
 - procedimiento verificable de pausa de procesos sin borrar el linaje;
 - auditoría de metadatos anterior a cualquier despliegue Tor.
 
-La segunda revisión adversarial añadió una autoridad de lease separada del
-nodo, rechazo verificable de nodos no cooperantes, prohibición comprobable de
-autorrenovación y una etiqueta explícita para el modo transitorio de clave
-única.
-
 ## Estado de esta versión
 
-- Diseño y modelo de amenazas: publicados.
-- Simulacro sintético de parada/revocación: ejecutado en diez ensayos.
-- Prueba de parada de un nodo real independiente: no realizada.
+- Diseño, modelo de amenazas y simulacros: preregistrados.
 - Manifiesto de nodo: definido y validable.
 - Instalación de Tor o I2P: no realizada.
 - Dirección onion: no creada.
@@ -52,10 +45,6 @@ La instalación será un experimento posterior, reversible y separado. Antes
 de activarlo se conservará la configuración previa y se comprobará que el
 servicio no exponga el archivo privado, credenciales, rutas personales ni
 interfaces administrativas.
-
-`pattern-scan-passed` significa únicamente que los patrones publicados no
-encontraron coincidencias en el paquete actual. No evalúa todavía el historial
-Git, metadatos internos de documentos, correlación temporal ni enlace de claves.
 
 ## Límite central
 

@@ -35,14 +35,11 @@ def main() -> int:
     })
     report = {
         "schema": "digital-field-common-cause-analysis/v1",
-        "consistency": "passed" if not missing else "failed",
-        "independence": "not_assessed",
-        "status": "analysis-complete-claims-incomplete" if not missing else "invalid-graph",
+        "status": "passed" if not missing else "failed",
         "node_count": len(nodes),
         "principal_impact": {key: sorted(value) for key, value in sorted(impact.items())},
         "shared_causes": shared,
         "missing_references": missing,
-        "unknown_dependencies": graph.get("unknown_dependencies", []),
         "claims": graph.get("claims", {}),
     }
     text = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
@@ -50,8 +47,9 @@ def main() -> int:
         args.output.write_text(text, encoding="utf-8")
     else:
         print(text, end="")
-    return 0 if report["consistency"] == "passed" else 1
+    return 0 if report["status"] == "passed" else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

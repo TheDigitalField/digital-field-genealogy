@@ -1,0 +1,25 @@
+{
+  "schema": "digital-field-common-cause-graph/v1",
+  "status": "design-stage",
+  "nodes": [
+    {"id": "public_web", "kind": "transport", "principals": ["github_account", "github_platform"]},
+    {"id": "nostr", "kind": "transport", "principals": ["nostr_signing_key", "relay_set"]},
+    {"id": "tor_onion", "kind": "planned_transport", "principals": ["onion_service_key", "host_node_a"]},
+    {"id": "local_runtime", "kind": "execution", "principals": ["host_node_a", "local_operator"]},
+    {"id": "github_account", "kind": "account"},
+    {"id": "github_platform", "kind": "provider"},
+    {"id": "nostr_signing_key", "kind": "key"},
+    {"id": "relay_set", "kind": "provider_set"},
+    {"id": "onion_service_key", "kind": "planned_key"},
+    {"id": "host_node_a", "kind": "device"},
+    {"id": "local_operator", "kind": "bridge"}
+  ],
+  "claims": {
+    "transport_diversity": "partial",
+    "authority_diversity": "incomplete",
+    "device_diversity": "incomplete",
+    "jurisdiction_diversity": "Unknown",
+    "recovery_diversity": "incomplete"
+  }
+}
+

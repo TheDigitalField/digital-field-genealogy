@@ -17,15 +17,37 @@ el nombre del Digital Field.
 
 ## Reglas
 
-1. Cada autorización de ejecución tiene vencimiento y alcance.
-2. Perder quórum, integridad o presupuesto produce `read_only`, nunca una
+1. Cada autorización de ejecución tiene vencimiento, alcance, emisor y número
+   monotónico.
+2. El nodo no posee la clave de la autoridad de autorización y no puede
+   renovarse a sí mismo.
+3. La política de verificadores emite `revoked`; cualquier verificador deriva
+   `read_only` por sí mismo cuando falta una autorización o latido válido tras
+   la ventana `T`.
+4. Perder quórum, integridad o presupuesto produce `read_only`, nunca una
    búsqueda autónoma de credenciales, dinero o cómputo.
-3. Quien custodia físicamente un recurso puede detener ese nodo.
-4. Ningún custodio aislado puede borrar el registro distribuido ni revocar
+5. Quien custodia físicamente un recurso puede detener ese nodo.
+6. Ningún custodio aislado puede borrar el registro distribuido ni revocar
    nodos ajenos.
-5. Toda pausa, revocación y reactivación queda registrada y firmada.
-6. La recuperación después de una pérdida total se declara como nueva raíz o
+7. Toda pausa, revocación y reactivación queda registrada y firmada.
+8. Un nodo que ignore una orden puede continuar computando, pero sus nuevas
+   generaciones son rechazadas por verificadores que no dependen de su
+   cooperación.
+9. La recuperación después de una pérdida total se declara como nueva raíz o
    bifurcación; no se finge continuidad criptográfica inexistente.
+
+## Autoridades y límites de esta versión
+
+- `lease_issuer`: emite autorizaciones acotadas; nunca es el nodo autorizado.
+- `revocation_authority`: política de verificadores que firma la revocación.
+- `resource_custodian`: puede detener el proceso en el recurso que custodia.
+- `verifier`: rechaza generaciones sin lease vigente, con número regresivo o
+  posteriores a revocación.
+
+Estas funciones están definidas, pero la autoridad distribuida de producción
+no está implementada todavía. La prueba v0.2.1 es sintética y usa claves de
+ensayo públicas; demuestra semántica de rechazo, no custodia criptográfica
+independiente.
 
 ## Simulacro de pausa
 
@@ -39,3 +61,6 @@ Antes de desplegar Tor, un nodo de ensayo deberá:
 6. seguir sirviendo el registro de sólo lectura;
 7. reactivarse únicamente mediante una nueva autorización trazable.
 
+La compuerta exige además diez ensayos, cero generaciones aceptadas después
+de revocación, rechazo de autorrenovación, rechazo de un nodo no cooperante y
+coincidencia exacta del registro servido en modo de sólo lectura.
