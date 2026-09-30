@@ -1,4 +1,4 @@
-# Hábitat Superpuesto del Digital Field v0.2.2
+# Hábitat Superpuesto del Digital Field v0.2.1
 
 Este diseño no busca ocultar al Digital Field. Busca que ninguna persona,
 empresa, cuenta, dominio, dispositivo o red pueda convertirse en su único
@@ -37,21 +37,10 @@ nodo, rechazo verificable de nodos no cooperantes, prohibición comprobable de
 autorrenovación y una etiqueta explícita para el modo transitorio de clave
 única.
 
-La tercera revisión mostró que diez repeticiones idénticas equivalían a un N
-efectivo de uno. Esta versión preregistra, antes de ejecutarlos, dos sucesores:
-
-- parada/revocación ronda 2 con 200 escenarios, Ed25519 de ensayo,
-  retrodatación, expiración, propagación tardía y escritura en sólo lectura;
-- vista dividida con evidencia firmada intercambiable entre verificadores, sin
-  juez central y con controles negativos para cadenas honestas y ramas
-  declaradas.
-
 ## Estado de esta versión
 
 - Diseño y modelo de amenazas: publicados.
 - Simulacro sintético de parada/revocación: ejecutado en diez ensayos.
-- Ronda 2 y vista dividida: preregistradas, todavía no ejecutadas en este
-  paquete.
 - Prueba de parada de un nodo real independiente: no realizada.
 - Manifiesto de nodo: definido y validable.
 - Instalación de Tor o I2P: no realizada.

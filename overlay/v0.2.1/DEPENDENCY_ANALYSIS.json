@@ -1,0 +1,83 @@
+{
+  "schema": "digital-field-common-cause-analysis/v1",
+  "consistency": "passed",
+  "independence": "not_assessed",
+  "status": "analysis-complete-claims-incomplete",
+  "node_count": 14,
+  "principal_impact": {
+    "account_custodian": [
+      "public_web"
+    ],
+    "codex_platform": [
+      "local_runtime",
+      "nostr",
+      "public_web",
+      "tor_onion"
+    ],
+    "github_account": [
+      "public_web"
+    ],
+    "github_platform": [
+      "public_web"
+    ],
+    "host_custodian": [
+      "local_runtime",
+      "tor_onion"
+    ],
+    "host_node_a": [
+      "local_runtime",
+      "tor_onion"
+    ],
+    "maintenance_agent": [
+      "local_runtime",
+      "nostr",
+      "public_web",
+      "tor_onion"
+    ],
+    "nostr_signing_key": [
+      "nostr"
+    ],
+    "onion_service_key": [
+      "tor_onion"
+    ],
+    "relay_set": [
+      "nostr"
+    ]
+  },
+  "shared_causes": {
+    "maintenance_agent": [
+      "local_runtime",
+      "nostr",
+      "public_web",
+      "tor_onion"
+    ],
+    "codex_platform": [
+      "local_runtime",
+      "nostr",
+      "public_web",
+      "tor_onion"
+    ],
+    "host_node_a": [
+      "local_runtime",
+      "tor_onion"
+    ],
+    "host_custodian": [
+      "local_runtime",
+      "tor_onion"
+    ]
+  },
+  "missing_references": [],
+  "unknown_dependencies": [
+    "github_account_recovery_principal",
+    "nostr_signing_key_storage",
+    "future_onion_service_key_storage",
+    "jurisdictional_common_causes"
+  ],
+  "claims": {
+    "transport_diversity": "partial",
+    "authority_diversity": "incomplete",
+    "device_diversity": "incomplete",
+    "jurisdiction_diversity": "Unknown",
+    "recovery_diversity": "incomplete"
+  }
+}

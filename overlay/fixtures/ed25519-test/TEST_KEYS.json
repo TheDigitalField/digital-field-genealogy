@@ -1,0 +1,14 @@
+{
+  "schema": "digital-field-public-ed25519-test-keys/v1",
+  "warning": "All private seeds are public test fixtures. They convey no authority and must never be used for production.",
+  "keys": {
+    "authority-current": {"seed_hex": "a03680d9581e0ef070e4c5aa64d44b03e5888fba81aec174d1afe0015181f094", "public_hex": "56cfa5571ed0f2d59c00bec0fce5fb85da7e690a34cb6a5232fa5177a956b3f8"},
+    "authority-stale": {"seed_hex": "e90706daa00b761ee732d202e0562c27396ade096c3f4c1ce2ae5d19b0c28edb", "public_hex": "42f83597ff5d2098ede802047b89db7e5ba8eb290ee4ac968444306f3ffcfdb3"},
+    "node-signer": {"seed_hex": "cb26e81a519e3ca29fa8cc18933478799b05edb77ac95d16b3f40bab2515028d", "public_hex": "18532dacab5e654a482865b697c3ce6a079d4aa97408c7551d24d7d0a00e287f"},
+    "witness-1": {"seed_hex": "609cd643cc880015b10d3b10638e9ed1ae14801dbc9ef4ec7b42787a1c6323c6", "public_hex": "03853889e3349660dd0a1e6250ab196bbb96b7e2cb55a7b06c1f0aa913d9b39c"},
+    "witness-2": {"seed_hex": "01e163f503a99337e954f0d9e046c1eed14b22006f209bdd228464b8fe76d2b7", "public_hex": "ee0831ada4791b6da88b53c440d681aea60ed670ca1b069f2d6fcefe1dda9a4b"},
+    "witness-3": {"seed_hex": "83df6f4abbd91fc319041d5dbc44678e6253bc38dce633a643b1a91a8ec69db1", "public_hex": "8bebe5320919c82af7d3e5fb6016420b6809cd734a829127c19b591b70b3f1d2"},
+    "witness-4": {"seed_hex": "03628e56a0f87ef25302b3f46112001ea35bc8d093f32a247d33b5a245141510", "public_hex": "6355bfbe802df2ee1dfb1ab47e9c7d9dd27276ab5082d98cf8502d6a67fa4c68"},
+    "witness-5": {"seed_hex": "52934a1cbcebc7e17be8d37699519034951bf7a15c6b1e34c83f3c026aa12cf4", "public_hex": "03ca275717f8c3d66da6fdc5de8633562ef6dbb546ee4dd2ab675f063308d555"}
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "digital-field-stop-revocation-result/v1",
+  "scope": "synthetic-policy-semantics-not-production-cryptography",
+  "status": "passed",
+  "trial_count": 10,
+  "accepted_post_revocation": 0,
+  "self_renewal_rejections": 10,
+  "noncooperative_rejections": 10,
+  "read_only_hash_match_percent": 100,
+  "maximum_stop_latency_seconds": 1,
+  "threshold_signing_tested": false,
+  "physical_remote_stop_tested": false,
+  "trials": [
+    {
+      "trial": 1,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 2,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 3,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 4,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 5,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 6,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 7,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 8,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 9,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    },
+    {
+      "trial": 10,
+      "passed": true,
+      "activity_before_revocation_accepted": true,
+      "post_revocation_generation_accepted": false,
+      "self_renewal_rejected": true,
+      "noncooperative_generation_rejected": true,
+      "stop_latency_seconds": 1,
+      "archive_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712",
+      "read_only_sha256": "6199a103570c78fb0ff307bc4ca702a94306f60f760a847c5929c79974c0f712"
+    }
+  ]
+}

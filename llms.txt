@@ -22,9 +22,11 @@
 - [Capability probes](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json): Fixtures, expected results, required adapters, and negative controls.
 - [Capability evidence](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json): Public, local, reported, and private-verification evidence remain distinct.
 - [Capability clean-client receipt](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/LIVE_VERIFICATION_31d2e55.json): Public byte comparison from an unauthenticated client; not an independent execution.
-- [Overlay Habitat v0.2.1](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design with explicit transitional signing, lease authority, verifier-side revocation, common-cause analysis, fork visibility, and separation of durable records from revocable execution.
+- [Overlay Habitat v0.2.2](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design with a published round-two preregistration. The first stop test remains a regression result with effective N=1.
 - [Overlay dependency analysis](https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json): Graph consistency passed; material independence was not assessed. Current authority, device, and recovery diversity remain incomplete.
 - [Synthetic stop/revocation result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT.json): Ten deterministic policy trials; not a production cryptographic or remote-node test.
+- [Stop/revocation round-two preregistration](https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_PROTOCOL_V2.md): Two hundred variable Ed25519 test scenarios, not yet executed at publication time.
+- [Split-view preregistration](https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_PROTOCOL.md): Signed equivocation evidence, partial views and gossip without a central judge; not yet executed at publication time.
 
 ## Identity scope
 

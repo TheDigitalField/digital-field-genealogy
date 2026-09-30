@@ -1,51 +1,33 @@
 {
-  "schema": "digital-field-overlay-distribution/0.2",
-  "version": "0.2.1",
-  "status": "public-design-and-synthetic-test-verified",
-  "publication": {
-    "content_commit": "aa92349",
-    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36663643374",
-    "github_pages": {
-      "landing_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/",
-      "stop_result_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT.json",
-      "dependency_analysis_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json",
-      "verified_exact": true,
-      "verified_payload_files": 22,
-      "verification_client": "unauthenticated HTTPS with commit cache-busting"
-    }
-  },
+  "schema": "digital-field-overlay-preregistration-distribution/0.2",
+  "version": "0.2.2",
+  "status": "local-preregistration-not-yet-published",
+  "publication": null,
   "ancestor_distribution": {
-    "version": "0.2.0",
-    "content_commit": "6f28657",
-    "receipt_commit": "31d2e55",
-    "url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/v0.2.0/README.es.md",
+    "version": "0.2.1",
+    "content_commit": "aa92349",
+    "receipt_commit": "3e58523",
+    "url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/v0.2.1/README.es.md",
     "verified_exact_at_publication": true
   },
-  "artifacts": [
-    {
-      "path": "ARCHITECTURE.md",
-      "bytes": 5800,
-      "sha256": "acfa9d2b6b92528106fa7c238a53035b5a6b7b9565e30489baab3e5846f27886"
-    },
-    {
-      "path": "DEPENDENCY_GRAPH.json",
-      "bytes": 1604,
-      "sha256": "4cd065e3989517c674ea004c3e91e794de794fceebef4b64c787c3200fe81bd6"
-    },
-    {
-      "path": "STOP_REVOCATION_RESULT.json",
-      "bytes": 5053,
-      "sha256": "5bc9768057fd19400f3f8b432742f9f07e70b7d2f3ae38bdf0fc28f923737395"
-    }
+  "preregistered_artifacts": [
+    {"path": "STOP_REVOCATION_PROTOCOL_V2.md", "bytes": 1452, "sha256": "1c247750712f8c77c86db29dd7e818c00193918bcd4030a14ead3482b735ee24"},
+    {"path": "SPLIT_VIEW_PROTOCOL.md", "bytes": 1647, "sha256": "d29e881a1ca58faf0c294ab5bf288137e93695423e4fc91ecf0f44c9dcca4b5b"},
+    {"path": "scripts/test_stop_revocation_v2.py", "bytes": 6522, "sha256": "acc593cda9e8aec551246b2e2b18a6403dcbbbfed714bd4b30766fa54845935b"},
+    {"path": "scripts/test_split_view.py", "bytes": 7224, "sha256": "6f60432e29d43c01ca004df2445ec9d80cf5c0e8b0fae39dd56374777049981b"},
+    {"path": "fixtures/ed25519-test/TEST_KEYS.json", "bytes": 1664, "sha256": "4dda9ccaa56a023d0e40392a3baeaf0537213468d5f948719d5899ecddbf2aa3"}
   ],
-  "deployment_state": {
+  "execution_state": {
+    "round_1_regression": "passed-with-effective-n-1",
+    "round_2": "not-run",
+    "split_view": "not-run",
     "tor": false,
     "i2p": false,
     "threshold_signing": false,
-    "common_cause_independence": "not_assessed",
-    "synthetic_stop_revocation_test": "passed"
+    "material_independence": "not_assessed"
   },
   "private_runtime_embedded": false,
   "credentials_embedded": false,
+  "public_test_private_seeds_embedded": true,
   "human_identity_embedded": false
 }

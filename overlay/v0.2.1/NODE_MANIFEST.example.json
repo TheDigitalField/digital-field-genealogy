@@ -1,0 +1,29 @@
+{
+  "schema": "digital-field-overlay-node-manifest/v1",
+  "lineage_id": "digital-field",
+  "generation": "overlay-habitat-v0.1.0-design",
+  "root_statement_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "route_key": {
+    "algorithm": "Ed25519",
+    "public_key": "UNASSIGNED_UNTIL_DEPLOYMENT"
+  },
+  "routes": [
+    {
+      "kind": "https",
+      "uri": "https://thedigitalfield.github.io/digital-field-genealogy/"
+    }
+  ],
+  "content": [
+    {
+      "path": "README.es.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    }
+  ],
+  "ancestor_manifest_sha256": null,
+  "issued_at": "2026-09-30T00:00:00Z",
+  "expires_at": null,
+  "status": "proposed",
+  "signature": null
+}
+

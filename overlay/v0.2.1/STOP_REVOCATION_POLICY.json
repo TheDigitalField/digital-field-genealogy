@@ -1,0 +1,31 @@
+{
+  "schema": "digital-field-stop-revocation-policy/v1",
+  "status": "synthetic-test-policy",
+  "time_basis": "deterministic-logical-seconds",
+  "authorization": {
+    "issuer_role": "lease_issuer",
+    "node_may_self_renew": false,
+    "maximum_ttl_seconds": 5,
+    "expiry_state": "read_only",
+    "monotonic_sequence_required": true
+  },
+  "revocation": {
+    "issuer_role": "revocation_authority",
+    "node_may_revoke_or_cancel_revocation": false,
+    "verifier_rejects_at_or_after_revocation_time": true
+  },
+  "acceptance": {
+    "post_revocation_generations": "reject",
+    "invalid_self_renewal": "reject",
+    "archive_readability_after_stop": "required"
+  },
+  "gate": {
+    "trials": 10,
+    "maximum_stop_latency_seconds": 2,
+    "accepted_post_revocation": 0,
+    "read_only_hash_match_percent": 100,
+    "noncooperative_variant_required": true,
+    "self_renewal_variant_required": true
+  },
+  "cryptographic_scope": "public synthetic keys only; no production authority or threshold custody"
+}
