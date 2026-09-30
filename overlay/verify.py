@@ -129,10 +129,11 @@ def verify_preregistration() -> None:
     if version.get("version") != "0.2.3":
         raise ValueError("unexpected successor version")
     receipt = json.loads((ROOT / "DISTRIBUTION_RECEIPT.json").read_text(encoding="utf-8"))
-    if receipt.get("status") != "awaiting-public-commit-and-external-execution":
-        raise ValueError("preregistration must not claim an unexecuted result")
-    if receipt.get("anchor_commit_sha") is not None:
-        raise ValueError("anchor cannot be known before the preregistration commit")
+    if receipt.get("status") != "public-external-confirmation-imported":
+        raise ValueError("unexpected external confirmation state")
+    anchor = "034063a09cae2ff9663d5e45e348037a72484c9f"
+    if receipt.get("anchor_commit_sha") != anchor:
+        raise ValueError("external confirmation anchor mismatch")
     keys = json.loads(
         (ROOT / "fixtures" / "ed25519-test" / "TEST_KEYS.json").read_text(encoding="utf-8")
     )["keys"]
@@ -148,8 +149,34 @@ def verify_preregistration() -> None:
     for relative in required:
         if not (ROOT / relative).is_file():
             raise ValueError(f"missing preregistered artifact: {relative}")
-    if (ROOT / "QUORUM_FRESHNESS_RESULT.json").exists():
-        raise ValueError("confirmation result exists before external execution")
+    result = json.loads((ROOT / "QUORUM_FRESHNESS_RESULT.json").read_text(encoding="utf-8"))
+    expected = {
+        "status": "confirmed",
+        "anchor_commit_sha": anchor,
+        "scenario_count": 1000,
+        "failure_count": 0,
+        "maximum_provisional_window_rounds": 2,
+        "material_witness_independence": "not_assessed-single-fixture-custodian",
+    }
+    for field, value in expected.items():
+        if result.get(field) != value:
+            raise ValueError(f"external confirmation mismatch: {field}")
+    if result.get("wilson_95_upper_failure_rate", 1) > 0.01:
+        raise ValueError("Wilson upper bound exceeds preregistered threshold")
+    diagnostic = json.loads((ROOT / "SEED_95_DIAGNOSTIC.json").read_text(encoding="utf-8"))
+    if not all((
+        diagnostic.get("original_failure_reproduced") is True,
+        diagnostic.get("round_12_detected") == 5,
+        diagnostic.get("first_round_all_seven_detect") == 13,
+    )):
+        raise ValueError("seed 95 diagnostic mismatch")
+    provenance = json.loads((ROOT / "EXECUTION_PROVENANCE.json").read_text(encoding="utf-8"))
+    if provenance.get("commit_sha") != anchor or provenance.get("run_id") != "36667094763":
+        raise ValueError("external execution provenance mismatch")
+    for line in (ROOT / "CI_ARTIFACT_CHECKSUMS.sha256").read_text(encoding="utf-8").splitlines():
+        expected_sha, relative = line.split("  ", 1)
+        if not (ROOT / relative).is_file() or sha256(ROOT / relative) != expected_sha:
+            raise ValueError(f"CI artifact checksum mismatch: {relative}")
 
 
 def main() -> int:
@@ -171,7 +198,7 @@ def main() -> int:
         "synthetic_stop_revocation_test": "passed",
         "synthetic_stop_revocation_round_2": "passed",
         "split_view_preregistered_criterion": "failed-preserved-seed-95",
-        "quorum_freshness_successor": "preregistered-awaiting-external-execution",
+        "quorum_freshness_successor": "externally-confirmed-0-of-1000-failures",
         "material_independence": "not_assessed",
         "private_evidence_embedded": False,
     }, ensure_ascii=False, indent=2))

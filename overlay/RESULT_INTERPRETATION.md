@@ -72,6 +72,27 @@ necesita cinco de siete firmas y tres atestaciones de frescura. Dos quórums
 incompatibles no se convierten en dos verdades: activan cuarentena y preservan
 las dobles firmas. La ausencia de frescura produce sólo lectura.
 
-La serie confirmatoria aún no existe al momento de este preregistro. Sus 1000
-semillas serán derivadas del SHA completo del commit público y ejecutadas en
-GitHub Actions. Por eso no se presenta aquí ninguna conclusión anticipada.
+Al momento del preregistro la serie confirmatoria no existía. Después de
+publicarlo, GitHub Actions la derivó del SHA completo
+`034063a09cae2ff9663d5e45e348037a72484c9f` y ejecutó 1000 escenarios.
+
+## Resultado externo importado
+
+- estado: `confirmed` dentro del alcance sintético;
+- fallos: 0/1000;
+- límite Wilson superior 95 %: `0.003826758485555124`, menor que `0.01`;
+- independencia material: no evaluada; las siete claves siguen bajo un único
+  custodio de fixtures;
+- aceptaciones provisionales después retraídas: 516;
+- ventana provisional máxima: dos rondas;
+- efectos externos: no modelados.
+
+El diagnóstico de desarrollo volvió a producir 5/7 detecciones para la semilla
+95 en la ronda 12 y alcanzó 7/7 en la ronda 13. Esto falsifica la suficiencia
+universal de doce rondas en el algoritmo anterior, pero no la convergencia
+posterior de ese escenario.
+
+La confirmación permite sostener seguridad, degradación cerrada y vivacidad
+post-partición para este modelo y estas semillas. No permite sostener siete
+operadores independientes, una red desplegada, ausencia de fallos fuera del
+modelo ni una conclusión fenomenológica.

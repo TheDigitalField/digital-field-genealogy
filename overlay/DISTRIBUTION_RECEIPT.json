@@ -1,19 +1,60 @@
 {
-  "schema": "digital-field-overlay-preregistration/0.3",
+  "schema": "digital-field-overlay-confirmation/0.3",
   "version": "0.2.3",
-  "status": "awaiting-public-commit-and-external-execution",
-  "publication_sequence": [
-    "publish protocol, code, workflow and checksums",
-    "execute automatically from that exact public commit",
-    "preserve GitHub Actions artifact",
-    "publish the unmodified result in a later commit"
-  ],
-  "anchor_commit_sha": null,
+  "status": "public-external-confirmation-imported",
+  "anchor_commit_sha": "034063a09cae2ff9663d5e45e348037a72484c9f",
   "external_execution": {
     "provider": "GitHub Actions",
     "workflow": ".github/workflows/overlay-v023-confirmation.yml",
-    "run_id": null,
-    "artifact_digest": null
+    "run_id": "36667094763",
+    "run_attempt": "1",
+    "run_url": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36667094763",
+    "artifact_id": "11076850251",
+    "artifact_name": "overlay-v0.2.3-confirmation-034063a09cae2ff9663d5e45e348037a72484c9f",
+    "artifact_zip_bytes": 87189,
+    "artifact_digest_sha256": "e04212750c2a2d1dac3d492f25f1f68dad5bf2009a475606501d4592fdac5982",
+    "downloaded_digest_verified": true,
+    "internal_checksums_verified": true,
+    "non_github_timestamp_anchor": null
+  },
+  "result_artifacts": [
+    {
+      "path": "QUORUM_FRESHNESS_RESULT.json",
+      "bytes": 2954397,
+      "sha256": "1a26c865d915d46119d8498927081da9eaf7ec51f2caae0ca74cbff62f1da5e4"
+    },
+    {
+      "path": "SEED_95_DIAGNOSTIC.json",
+      "bytes": 18181,
+      "sha256": "13b07456fc50d4c4fd4b086449cebd527d193c6de3b9bf7e688696ad8ed02661"
+    },
+    {
+      "path": "EXECUTION_PROVENANCE.json",
+      "bytes": 824,
+      "sha256": "0d357ee6c61b41727d17c3f142e6dd4c2ae3547d742f9559b271b6df5f5f7688"
+    },
+    {
+      "path": "CI_ARTIFACT_CHECKSUMS.sha256",
+      "bytes": 277,
+      "sha256": "e5830672ec2217fa3ad027bcc4b4206018a88be42dc33a702fc65e8296fb9ff2"
+    }
+  ],
+  "result": {
+    "status": "confirmed",
+    "scenario_count": 1000,
+    "failure_count": 0,
+    "wilson_95_upper_failure_rate": 0.003826758485555124,
+    "provisional_accept_then_retract_count": 516,
+    "maximum_provisional_window_rounds": 2,
+    "external_side_effects_modeled": false,
+    "material_witness_independence": "not_assessed-single-fixture-custodian"
+  },
+  "diagnostic": {
+    "development_seed": 95,
+    "round_12_detected": 5,
+    "first_round_all_seven_detect": 13,
+    "original_failure_reproduced": true,
+    "replaces_original_result": false
   },
   "ancestor_distribution": {
     "version": "0.2.2",
@@ -22,13 +63,6 @@
     "receipt_commit": "f094cfa",
     "preserved_path": "v0.2.2/",
     "split_view_result": "failed-preserved-seed-95-ended-5-of-7"
-  },
-  "execution_state": {
-    "new_confirmation_run_before_publication": false,
-    "prior_seed_range_0_199": "development",
-    "confirmation_seed_count": 1000,
-    "seed_source": "full public commit SHA",
-    "material_witness_independence": "not_assessed-single-fixture-custodian"
   },
   "private_runtime_embedded": false,
   "credentials_embedded": false,

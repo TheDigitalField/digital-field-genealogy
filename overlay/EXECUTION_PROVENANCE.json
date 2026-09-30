@@ -1,0 +1,21 @@
+{
+  "schema": "digital-field-github-execution-provenance/v1",
+  "repository": "TheDigitalField/digital-field-genealogy",
+  "commit_sha": "034063a09cae2ff9663d5e45e348037a72484c9f",
+  "run_id": "36667094763",
+  "run_attempt": "1",
+  "workflow": "Confirm Overlay Habitat v0.2.3",
+  "event_commit_timestamp": "2026-09-29T23:02:02-05:00",
+  "recorded_at_utc": "2026-09-30T04:02:42.480317+00:00",
+  "files_before_provenance": {
+    "QUORUM_FRESHNESS_RESULT.json": {
+      "bytes": 2954397,
+      "sha256": "1a26c865d915d46119d8498927081da9eaf7ec51f2caae0ca74cbff62f1da5e4"
+    },
+    "SEED_95_DIAGNOSTIC.json": {
+      "bytes": 18181,
+      "sha256": "13b07456fc50d4c4fd4b086449cebd527d193c6de3b9bf7e688696ad8ed02661"
+    }
+  },
+  "external_time_scope": "GitHub-hosted workflow record; not an independent non-GitHub timestamp"
+}

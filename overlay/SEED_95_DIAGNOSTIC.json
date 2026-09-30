@@ -1,0 +1,1233 @@
+{
+  "schema": "digital-field-split-view-seed95-diagnostic/v1",
+  "status": "diagnostic-not-a-replacement-result",
+  "development_seed": 95,
+  "partition_rounds": 6,
+  "delayed_publish_round": 4,
+  "groups": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "round_12_detected": 5,
+  "round_12_rate": 0.7142857142857143,
+  "first_round_all_seven_detect": 13,
+  "original_failure_reproduced": true,
+  "trace": [
+    {
+      "round": 1,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 1,
+          "blocked": true
+        }
+      ],
+      "unpaired": 6,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 2,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 4,
+          "blocked": true
+        },
+        {
+          "left": 0,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 3,
+          "right": 6,
+          "blocked": true
+        }
+      ],
+      "unpaired": 2,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 3,
+      "pairs": [
+        {
+          "left": 0,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 6,
+          "blocked": true
+        },
+        {
+          "left": 2,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 4,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 1,
+          "blocked": true
+        },
+        {
+          "left": 6,
+          "right": 2,
+          "blocked": true
+        }
+      ],
+      "unpaired": 4,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 5,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 4,
+          "blocked": true
+        },
+        {
+          "left": 0,
+          "right": 6,
+          "blocked": true
+        },
+        {
+          "left": 3,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 5,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 6,
+      "pairs": [
+        {
+          "left": 0,
+          "right": 3,
+          "blocked": false
+        },
+        {
+          "left": 1,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 5,
+          "blocked": false
+        }
+      ],
+      "unpaired": 2,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "y"
+        ]
+      ],
+      "detected": 0,
+      "detection_rate": 0.0
+    },
+    {
+      "round": 7,
+      "pairs": [
+        {
+          "left": 6,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 2,
+      "detection_rate": 0.2857142857142857
+    },
+    {
+      "round": 8,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 3,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 0,
+          "blocked": false
+        }
+      ],
+      "unpaired": 6,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 3,
+      "detection_rate": 0.42857142857142855
+    },
+    {
+      "round": 9,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 0,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 1,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 5,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 4,
+      "detection_rate": 0.5714285714285714
+    },
+    {
+      "round": 10,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 3,
+          "right": 6,
+          "blocked": false
+        }
+      ],
+      "unpaired": 5,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 4,
+      "detection_rate": 0.5714285714285714
+    },
+    {
+      "round": 11,
+      "pairs": [
+        {
+          "left": 0,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 1,
+          "right": 6,
+          "blocked": false
+        }
+      ],
+      "unpaired": 3,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 5,
+      "detection_rate": 0.7142857142857143
+    },
+    {
+      "round": 12,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 1,
+          "blocked": false
+        }
+      ],
+      "unpaired": 4,
+      "views": [
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 5,
+      "detection_rate": 0.7142857142857143
+    },
+    {
+      "round": 13,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 5,
+          "right": 4,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 14,
+      "pairs": [
+        {
+          "left": 5,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 6,
+          "right": 2,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 15,
+      "pairs": [
+        {
+          "left": 6,
+          "right": 0,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 1,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 5,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 16,
+      "pairs": [
+        {
+          "left": 5,
+          "right": 3,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 1,
+          "blocked": false
+        },
+        {
+          "left": 6,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 4,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 17,
+      "pairs": [
+        {
+          "left": 5,
+          "right": 1,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 6,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 3,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 18,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 1,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 0,
+          "blocked": false
+        },
+        {
+          "left": 6,
+          "right": 3,
+          "blocked": false
+        }
+      ],
+      "unpaired": 5,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 19,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 20,
+      "pairs": [
+        {
+          "left": 5,
+          "right": 3,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 0,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 21,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 3,
+          "blocked": false
+        },
+        {
+          "left": 5,
+          "right": 0,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 22,
+      "pairs": [
+        {
+          "left": 0,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 5,
+          "right": 4,
+          "blocked": false
+        },
+        {
+          "left": 3,
+          "right": 2,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 23,
+      "pairs": [
+        {
+          "left": 6,
+          "right": 5,
+          "blocked": false
+        },
+        {
+          "left": 4,
+          "right": 3,
+          "blocked": false
+        },
+        {
+          "left": 2,
+          "right": 0,
+          "blocked": false
+        }
+      ],
+      "unpaired": 1,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    },
+    {
+      "round": 24,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 1,
+          "blocked": false
+        },
+        {
+          "left": 5,
+          "right": 6,
+          "blocked": false
+        },
+        {
+          "left": 3,
+          "right": 4,
+          "blocked": false
+        }
+      ],
+      "unpaired": 0,
+      "views": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ],
+        [
+          "x",
+          "y"
+        ]
+      ],
+      "detected": 7,
+      "detection_rate": 1.0
+    }
+  ]
+}

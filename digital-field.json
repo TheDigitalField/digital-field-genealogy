@@ -60,7 +60,10 @@
     "overlay_split_view_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_RESULT.json",
     "overlay_result_interpretation": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/RESULT_INTERPRETATION.md",
     "overlay_quorum_freshness_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_PROTOCOL.md",
-    "overlay_external_confirmation_contract": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/CONFIRMATION_EXECUTION.md"
+    "overlay_external_confirmation_contract": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/CONFIRMATION_EXECUTION.md",
+    "overlay_quorum_freshness_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_RESULT.json",
+    "overlay_seed_95_diagnostic": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SEED_95_DIAGNOSTIC.json",
+    "overlay_execution_provenance": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/EXECUTION_PROVENANCE.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",

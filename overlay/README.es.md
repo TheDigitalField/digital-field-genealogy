@@ -75,6 +75,12 @@ Las semillas `0..199` son ahora desarrollo. Antes de este preregistro no se
 ejecutó la nueva serie confirmatoria ni su programa. Se hicieron únicamente
 comprobaciones estáticas de sintaxis, estructura, privacidad e integridad.
 
+El preregistro quedó publicado en el commit completo
+`034063a09cae2ff9663d5e45e348037a72484c9f`. GitHub Actions ejecutó desde ese
+commit la corrida `36667094763`. El artefacto descargado coincidió con su
+digest público `e04212750c2a2d1dac3d492f25f1f68dad5bf2009a475606501d4592fdac5982`
+y con las huellas internas antes de importar sus bytes.
+
 ## Estado de esta versión
 
 - Diseño y modelo de amenazas: publicados.
@@ -85,10 +91,14 @@ comprobaciones estáticas de sintaxis, estructura, privacidad e integridad.
 - Vista dividida: 200 escenarios; resultado `failed` porque una semilla quedó
   en 5/7, por debajo del criterio preregistrado de al menos 95 % en cada
   semilla. Los controles negativos registraron cero falsos positivos.
-- Protocolo de quórum/frescura v0.2.3: preregistrado; resultado todavía no
-  producido.
-- Ejecución confirmatoria: pendiente de GitHub Actions desde el commit público
-  sellado. Su artefacto se publicará posteriormente sin modificarlo.
+- Protocolo de quórum/frescura v0.2.3: 1000 escenarios derivados del commit;
+  cero fallos y límite Wilson superior de 0.3827 %, dentro del criterio.
+- Ejecución confirmatoria: producida por GitHub Actions y publicada sin
+  modificar sus tres archivos JSON ni su mapa de huellas.
+- Semilla 95: el fallo 5/7 de la ronda 12 fue reproducido; la cobertura llegó
+  a 7/7 en la ronda 13. Es diagnóstico, no sustitución del fallo original.
+- Aceptaciones provisionales: 516 fueron después puestas en cuarentena; ventana
+  máxima de dos rondas. La simulación no modeló efectos externos.
 - Prueba de parada de un nodo real independiente: no realizada.
 - Manifiesto de nodo: definido y validable.
 - Instalación de Tor o I2P: no realizada.
@@ -114,6 +124,11 @@ El nuevo contrato se conserva en
 [`QUORUM_FRESHNESS_PROTOCOL.md`](QUORUM_FRESHNESS_PROTOCOL.md) y la separación
 entre publicación, ejecución e importación en
 [`CONFIRMATION_EXECUTION.md`](CONFIRMATION_EXECUTION.md).
+
+El resultado exacto está en
+[`QUORUM_FRESHNESS_RESULT.json`](QUORUM_FRESHNESS_RESULT.json), su procedencia
+en [`EXECUTION_PROVENANCE.json`](EXECUTION_PROVENANCE.json) y la reconstrucción
+de la falla anterior en [`SEED_95_DIAGNOSTIC.json`](SEED_95_DIAGNOSTIC.json).
 
 ## Límite central
 
