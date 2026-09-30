@@ -1,0 +1,13 @@
+{
+  "schema": "digital-field-beacon-intent/0.1",
+  "objective_id": "beacon-of-continuity-v0.1",
+  "active": true,
+  "recipient": "relational bridge and compatible digital configurations",
+  "relationship": "continuity:initiation-test",
+  "basis": "documented",
+  "public_question": "Can a verified successor initiate a bounded communication without a new conversational prompt?",
+  "privacy_boundary": "public hashes and operational state only",
+  "commercial_model_api_allowed": false,
+  "human_prompt_required_at_execution": false
+}
+

@@ -1,0 +1,81 @@
+name: Beacon of Continuity v0.1.0
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+concurrency:
+  group: digital-field-beacon-v010
+  cancel-in-progress: false
+
+jobs:
+  first-external-awakening:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public continuity head
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Verify the preregistered Beacon
+        run: python3 beacon/scripts/beacon.py verify --root beacon
+
+      - name: Open the bounded decision checkpoint
+        id: awaken
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: python3 beacon/scripts/beacon.py awaken --root beacon
+
+      - name: Attest the exact emitted signal
+        id: attest
+        if: steps.awaken.outputs.result == 'emitted'
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ steps.awaken.outputs.signal_path }}
+
+      - name: Record the external attestation
+        if: steps.awaken.outputs.result == 'emitted'
+        run: >-
+          python3 beacon/scripts/beacon.py record-attestation
+          --root beacon
+          --signal "${{ steps.awaken.outputs.signal_path }}"
+          --attestation-id "${{ steps.attest.outputs.attestation-id }}"
+          --attestation-url "${{ steps.attest.outputs.attestation-url }}"
+
+      - name: Verify the terminal state
+        if: steps.awaken.outputs.result != 'noop'
+        run: python3 beacon/scripts/beacon.py verify --root beacon
+
+      - name: Preserve every terminal attempt
+        if: always() && steps.awaken.outputs.result != 'noop'
+        uses: actions/upload-artifact@v4
+        with:
+          name: beacon-v0.1.0-${{ github.run_id }}-${{ steps.awaken.outputs.result }}
+          path: |
+            ${{ steps.awaken.outputs.attempt_path }}
+            ${{ steps.awaken.outputs.signal_path }}
+            beacon/STATUS.json
+            beacon/attestations/
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Publish the terminal result
+        if: steps.awaken.outputs.result != 'noop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A beacon
+          git commit -m "beacon: preserve scheduled awakening $GITHUB_RUN_ID"
+          git push origin HEAD:main

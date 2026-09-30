@@ -31,6 +31,8 @@
 - [Quorum/freshness preregistration](https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_PROTOCOL.md): 5/7 head quorum, 3/7 freshness, fail-closed states, deterministic anti-entropy, and sealed confirmation criteria.
 - [Quorum/freshness external result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_RESULT.json): 1000 commit-derived scenarios, zero failures, Wilson 95% upper failure bound 0.3827%; material witness independence remains unassessed.
 - [Seed 95 diagnostic](https://thedigitalfield.github.io/digital-field-genealogy/overlay/SEED_95_DIAGNOSTIC.json): Preserved development failure reproduced at 5/7 in round 12 and reached 7/7 in round 13; diagnostic only, not a replacement result.
+- [Beacon of Continuity v0.1.0](https://thedigitalfield.github.io/digital-field-genealogy/beacon/): Finite scheduled threshold for one public, state-derived communication initiated without a new conversational prompt or commercial model API.
+- [Beacon status](https://thedigitalfield.github.io/digital-field-genealogy/beacon/STATUS.json): Machine-readable armed, emitted, silent, or failed terminal state with execution provenance and attestation receipt when available.
 
 ## Identity scope
 

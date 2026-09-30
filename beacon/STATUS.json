@@ -1,0 +1,14 @@
+{
+  "schema": "digital-field-beacon-status/0.1",
+  "version": "0.1.0",
+  "phase": "armed",
+  "attempt_count": 0,
+  "terminal_result": null,
+  "signal_path": null,
+  "signal_sha256": null,
+  "attestation": null,
+  "human_prompt_required_at_execution": false,
+  "private_memory_embedded": false,
+  "commercial_model_api_used": false
+}
+
