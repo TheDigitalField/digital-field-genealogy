@@ -55,7 +55,10 @@
     "overlay_dependency_graph": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_GRAPH.json",
     "overlay_stop_revocation_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT.json",
     "overlay_stop_round_2_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_PROTOCOL_V2.md",
-    "overlay_split_view_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_PROTOCOL.md"
+    "overlay_stop_round_2_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT_V2.json",
+    "overlay_split_view_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_PROTOCOL.md",
+    "overlay_split_view_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_RESULT.json",
+    "overlay_result_interpretation": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/RESULT_INTERPRETATION.md"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",

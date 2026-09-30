@@ -1,7 +1,7 @@
 {
   "schema": "digital-field-metadata-audit/v1",
   "status": "pattern-scan-passed",
-  "files_scanned": 29,
+  "files_scanned": 32,
   "findings": [],
   "matched_values_emitted": false,
   "pattern_classes": [

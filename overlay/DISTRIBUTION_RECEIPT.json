@@ -1,8 +1,13 @@
 {
-  "schema": "digital-field-overlay-preregistration-distribution/0.2",
+  "schema": "digital-field-overlay-result-distribution/0.2",
   "version": "0.2.2",
-  "status": "local-preregistration-not-yet-published",
-  "publication": null,
+  "status": "public-preregistration-sealed-results-awaiting-publication",
+  "preregistration_publication": {
+    "commit": "5a3d45d",
+    "pages_run": "36664730385",
+    "verified_exact": true
+  },
+  "result_publication": null,
   "ancestor_distribution": {
     "version": "0.2.1",
     "content_commit": "aa92349",
@@ -19,13 +24,17 @@
   ],
   "execution_state": {
     "round_1_regression": "passed-with-effective-n-1",
-    "round_2": "not-run",
-    "split_view": "not-run",
+    "round_2": "passed-200-of-200-synthetic-scenarios",
+    "split_view": "failed-preserved-seed-95-ended-5-of-7",
     "tor": false,
     "i2p": false,
     "threshold_signing": false,
     "material_independence": "not_assessed"
   },
+  "result_artifacts": [
+    {"path": "STOP_REVOCATION_RESULT_V2.json", "bytes": 106694, "sha256": "c1d055d053e27ff1d5ee9fd67027774dba7c28c6e0888393334cca5b9449807e"},
+    {"path": "SPLIT_VIEW_RESULT.json", "bytes": 125182, "sha256": "6eedba0ed4df418e1ad62d19c211c3b4a524bd533923a8228d70566f5880357d"}
+  ],
   "private_runtime_embedded": false,
   "credentials_embedded": false,
   "public_test_private_seeds_embedded": true,

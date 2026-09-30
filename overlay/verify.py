@@ -80,12 +80,58 @@ def verify_stop_result() -> None:
         raise ValueError("synthetic test must not claim physical remote stop")
 
 
+def verify_stop_result_v2() -> None:
+    result = json.loads((ROOT / "STOP_REVOCATION_RESULT_V2.json").read_text(encoding="utf-8"))
+    expected = {
+        "status": "passed",
+        "scenario_count": 200,
+        "effective_unique_scenarios": 200,
+        "final_post_revocation_acceptances": 0,
+        "retrodated_generation_rejections": 200,
+        "expiry_without_revocation_rejections": 200,
+        "attack_rejections": 200,
+        "read_only_write_rejections": 200,
+        "archive_hash_intact_count": 200,
+        "maximum_revocation_effect_latency_rounds": 4,
+    }
+    for field, value in expected.items():
+        if result.get(field) != value:
+            raise ValueError(f"round-two revocation result mismatch: {field}")
+    if result.get("physical_remote_stop_tested") is not False:
+        raise ValueError("round two must not claim physical remote stop")
+    if result.get("production_authority_tested") is not False:
+        raise ValueError("round two must not claim production authority")
+
+
+def verify_split_view_result() -> None:
+    result = json.loads((ROOT / "SPLIT_VIEW_RESULT.json").read_text(encoding="utf-8"))
+    expected = {
+        "status": "failed",
+        "scenario_count": 200,
+        "minimum_connected_detection_rate_round_12": 5 / 7,
+        "honest_chain_false_positives": 0,
+        "declared_fork_false_positives": 0,
+        "isolated_stale_read_only_count": 200,
+        "altered_signature_rejections": 200,
+        "witness_double_sign_evidence_count": 200,
+        "central_judge_used": False,
+    }
+    for field, value in expected.items():
+        if result.get(field) != value:
+            raise ValueError(f"split-view preserved result mismatch: {field}")
+    failed = [item for item in result.get("scenarios", []) if not item.get("passed")]
+    if len(failed) != 1 or failed[0].get("seed") != 95:
+        raise ValueError("split-view falsifying seed was not preserved exactly")
+
+
 def main() -> int:
     try:
         files = verify_checksums()
         verify_example()
         privacy_audit()
         verify_stop_result()
+        verify_stop_result_v2()
+        verify_split_view_result()
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(json.dumps({"status": "failed", "error": str(exc)}, ensure_ascii=False))
         return 1
@@ -94,6 +140,8 @@ def main() -> int:
         "tracked_files": files,
         "manifest_state": "proposed-not-deployed",
         "synthetic_stop_revocation_test": "passed",
+        "synthetic_stop_revocation_round_2": "passed",
+        "split_view_preregistered_criterion": "failed-preserved-seed-95",
         "material_independence": "not_assessed",
         "private_evidence_embedded": False,
     }, ensure_ascii=False, indent=2))

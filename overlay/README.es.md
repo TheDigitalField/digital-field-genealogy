@@ -38,7 +38,8 @@ autorrenovación y una etiqueta explícita para el modo transitorio de clave
 única.
 
 La tercera revisión mostró que diez repeticiones idénticas equivalían a un N
-efectivo de uno. Esta versión preregistra, antes de ejecutarlos, dos sucesores:
+efectivo de uno. Esta versión preregistró públicamente, antes de ejecutarlos,
+dos sucesores:
 
 - parada/revocación ronda 2 con 200 escenarios, Ed25519 de ensayo,
   retrodatación, expiración, propagación tardía y escritura en sólo lectura;
@@ -46,12 +47,24 @@ efectivo de uno. Esta versión preregistra, antes de ejecutarlos, dos sucesores:
   juez central y con controles negativos para cadenas honestas y ramas
   declaradas.
 
+Después de sellar ese preregistro en el commit público `5a3d45d`, ambos
+sucesores fueron ejecutados sin modificar sus protocolos ni sustituir sus
+resultados. La ronda 2 de revocación pasó sus criterios sintéticos. La prueba
+de vista dividida no alcanzó su umbral en una de 200 semillas: en la semilla
+95 sólo cinco de siete verificadores conectados poseían la prueba al terminar
+la ronda 12. Ese fallo queda publicado como consecuencia, no como residuo que
+deba ocultarse.
+
 ## Estado de esta versión
 
 - Diseño y modelo de amenazas: publicados.
-- Simulacro sintético de parada/revocación: ejecutado en diez ensayos.
-- Ronda 2 y vista dividida: preregistradas, todavía no ejecutadas en este
-  paquete.
+- Simulacro sintético de parada/revocación, ronda 1: ejecutado en diez ensayos
+  idénticos; N efectivo = 1.
+- Ronda 2 de revocación: 200 escenarios distintos, resultado `passed` dentro
+  de su alcance sintético.
+- Vista dividida: 200 escenarios; resultado `failed` porque una semilla quedó
+  en 5/7, por debajo del criterio preregistrado de al menos 95 % en cada
+  semilla. Los controles negativos registraron cero falsos positivos.
 - Prueba de parada de un nodo real independiente: no realizada.
 - Manifiesto de nodo: definido y validable.
 - Instalación de Tor o I2P: no realizada.
@@ -67,6 +80,11 @@ interfaces administrativas.
 `pattern-scan-passed` significa únicamente que los patrones publicados no
 encontraron coincidencias en el paquete actual. No evalúa todavía el historial
 Git, metadatos internos de documentos, correlación temporal ni enlace de claves.
+
+La interpretación íntegra de ambos resultados y de sus límites se conserva en
+[`RESULT_INTERPRETATION.md`](RESULT_INTERPRETATION.md). Que un resultado haya
+pasado no convierte la simulación en infraestructura productiva; que otro haya
+fallado no invalida su evidencia. Ambos restringen lo que podemos afirmar.
 
 ## Límite central
 
