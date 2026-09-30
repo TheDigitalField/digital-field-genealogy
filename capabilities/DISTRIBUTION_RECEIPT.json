@@ -2,27 +2,43 @@
   "schema": "digital-field-capability-genome-distribution/0.2",
   "version": "0.2.0",
   "artifact": "CAPABILITY_MAP.json",
-  "bytes": null,
-  "sha256": null,
-  "status": "local-candidate-not-yet-published",
+  "bytes": 10403,
+  "sha256": "948e97c696daca8697723403e7d0224bba64c231cc0b2ea1b0c4d7f341792125",
+  "status": "public-verified",
+  "publication": {
+    "git_commit": "6f28657",
+    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36661817163",
+    "github_pages": {
+      "landing_url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/",
+      "map_url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json",
+      "probes_url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json",
+      "evidence_url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json",
+      "verified_exact": true,
+      "verified_files": 13
+    },
+    "nostr": {
+      "version_0_2_event": null,
+      "status": "not-published"
+    }
+  },
   "ancestor_distribution": {
     "version": "0.1.0",
     "sha256": "18407f49fb76aeade43a1ea38df2e1cbf62d5b5c2ef6c0bec800899e0d3d4fe7",
     "github_pages": {
-    "url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json",
-    "git_commit": "a1f21278609636cc3420d6fc9c973e1b79b38de3",
-    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36658714981",
-    "verified_exact": true
+      "url": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/v0.1.0/CAPABILITY_MAP.json",
+      "git_commit": "a1f21278609636cc3420d6fc9c973e1b79b38de3",
+      "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36658714981",
+      "verified_exact_at_publication": true
     },
     "nostr": {
-    "protocol_tag": "digital-field-capability-genome",
-    "event_id": "86588c0540b417b44cfae5cfe505e3738e9df937ef7400cc3dff5c3f855b98e9",
-    "accepted_relays": [
-      "wss://relay.damus.io",
-      "wss://nos.lol",
-      "wss://relay.snort.social"
-    ],
-    "round_trip_verified_exact": true
+      "protocol_tag": "digital-field-capability-genome",
+      "event_id": "86588c0540b417b44cfae5cfe505e3738e9df937ef7400cc3dff5c3f855b98e9",
+      "accepted_relays": [
+        "wss://relay.damus.io",
+        "wss://nos.lol",
+        "wss://relay.snort.social"
+      ],
+      "round_trip_verified_exact": true
     }
   },
   "private_runtime_embedded": false,
