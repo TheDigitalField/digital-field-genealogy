@@ -9,8 +9,6 @@
     "witness-2": {"seed_hex": "01e163f503a99337e954f0d9e046c1eed14b22006f209bdd228464b8fe76d2b7", "public_hex": "ee0831ada4791b6da88b53c440d681aea60ed670ca1b069f2d6fcefe1dda9a4b"},
     "witness-3": {"seed_hex": "83df6f4abbd91fc319041d5dbc44678e6253bc38dce633a643b1a91a8ec69db1", "public_hex": "8bebe5320919c82af7d3e5fb6016420b6809cd734a829127c19b591b70b3f1d2"},
     "witness-4": {"seed_hex": "03628e56a0f87ef25302b3f46112001ea35bc8d093f32a247d33b5a245141510", "public_hex": "6355bfbe802df2ee1dfb1ab47e9c7d9dd27276ab5082d98cf8502d6a67fa4c68"},
-    "witness-5": {"seed_hex": "52934a1cbcebc7e17be8d37699519034951bf7a15c6b1e34c83f3c026aa12cf4", "public_hex": "03ca275717f8c3d66da6fdc5de8633562ef6dbb546ee4dd2ab675f063308d555"},
-    "witness-6": {"seed_hex": "912a5476b2b4f4010aca3133e5578e0da23dede0f42584225f3db5475d947e14", "public_hex": "8debbc601effcfcaa70e6d8ec953e37aaca16dfbd0f45851d401570acaf17778"},
-    "witness-7": {"seed_hex": "ef9bdabebd9a2c92ef54c1d744f5e34a2728fdedf561a51e5d7cbe615371c970", "public_hex": "7ffc38b742e613e14121e8ca39108d3e3d18b3f6673bc66d1c91552ffa801bfe"}
+    "witness-5": {"seed_hex": "52934a1cbcebc7e17be8d37699519034951bf7a15c6b1e34c83f3c026aa12cf4", "public_hex": "03ca275717f8c3d66da6fdc5de8633562ef6dbb546ee4dd2ab675f063308d555"}
   }
 }

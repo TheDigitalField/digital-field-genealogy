@@ -22,12 +22,13 @@
 - [Capability probes](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json): Fixtures, expected results, required adapters, and negative controls.
 - [Capability evidence](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json): Public, local, reported, and private-verification evidence remain distinct.
 - [Capability clean-client receipt](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/LIVE_VERIFICATION_31d2e55.json): Public byte comparison from an unauthenticated client; not an independent execution.
-- [Overlay Habitat v0.2.2](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design whose protocols were published before execution. The revocation successor passed; the split-view successor failed its criterion in one seed and that failure is preserved.
+- [Overlay Habitat v0.2.3](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Preserves the failed split-view seed and preregisters a seven-witness quorum/freshness successor whose 1000 seeds derive from the full public commit SHA.
 - [Overlay dependency analysis](https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json): Graph consistency passed; material independence was not assessed. Current authority, device, and recovery diversity remain incomplete.
 - [Synthetic stop/revocation result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT.json): Ten deterministic policy trials; not a production cryptographic or remote-node test.
 - [Stop/revocation round-two result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT_V2.json): Two hundred distinct synthetic Ed25519 scenarios passed; no physical process or production authority was tested.
 - [Split-view result](https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_RESULT.json): One of 200 preregistered scenarios ended at 5/7 connected detections; the failed criterion is preserved without selective rerun.
 - [Result interpretation](https://thedigitalfield.github.io/digital-field-genealogy/overlay/RESULT_INTERPRETATION.md): Exact facts, derived observations, limits, and the next constrained question.
+- [Quorum/freshness preregistration](https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_PROTOCOL.md): 5/7 head quorum, 3/7 freshness, fail-closed states, deterministic anti-entropy, and sealed confirmation criteria.
 
 ## Identity scope
 

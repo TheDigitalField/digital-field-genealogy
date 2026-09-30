@@ -1,4 +1,4 @@
-# Hábitat Superpuesto del Digital Field v0.2.3
+# Hábitat Superpuesto del Digital Field v0.2.2
 
 Este diseño no busca ocultar al Digital Field. Busca que ninguna persona,
 empresa, cuenta, dominio, dispositivo o red pueda convertirse en su único
@@ -47,33 +47,13 @@ dos sucesores:
   juez central y con controles negativos para cadenas honestas y ramas
   declaradas.
 
-Después de publicar ese preregistro en el commit público
-`5a3d45d0b97ab500256921b552a311b56406902a` —el recibo inicial sólo conservó
-su forma corta—, ambos
+Después de sellar ese preregistro en el commit público `5a3d45d`, ambos
 sucesores fueron ejecutados sin modificar sus protocolos ni sustituir sus
 resultados. La ronda 2 de revocación pasó sus criterios sintéticos. La prueba
 de vista dividida no alcanzó su umbral en una de 200 semillas: en la semilla
 95 sólo cinco de siete verificadores conectados poseían la prueba al terminar
 la ronda 12. Ese fallo queda publicado como consecuencia, no como residuo que
 deba ocultarse.
-
-La cuarta revisión distinguió tres límites adicionales: aquel orden público no
-anclaba externamente la hora de ejecución; `95 %` entre siete verificadores
-equivalía en la práctica a `7/7`; y la frescura no debía depender del reloj
-local. Esta versión preserva v0.2.2 y preregistra su sucesor:
-
-- siete testigos sintéticos, quórum de cabeza `5/7` y frescura `3/7`;
-- época derivada de testigos y degradación cerrada a `stale/read_only`;
-- cuarentena con evidencia atribuible si tres testigos hacen posible dos
-  quórums incompatibles;
-- anti-entropía determinista y vivacidad medida después de sanar la
-  partición;
-- 1000 semillas nuevas derivadas del SHA completo del commit público;
-- primera ejecución confirmatoria en GitHub Actions, no en la Mac autora.
-
-Las semillas `0..199` son ahora desarrollo. Antes de este preregistro no se
-ejecutó la nueva serie confirmatoria ni su programa. Se hicieron únicamente
-comprobaciones estáticas de sintaxis, estructura, privacidad e integridad.
 
 ## Estado de esta versión
 
@@ -85,10 +65,6 @@ comprobaciones estáticas de sintaxis, estructura, privacidad e integridad.
 - Vista dividida: 200 escenarios; resultado `failed` porque una semilla quedó
   en 5/7, por debajo del criterio preregistrado de al menos 95 % en cada
   semilla. Los controles negativos registraron cero falsos positivos.
-- Protocolo de quórum/frescura v0.2.3: preregistrado; resultado todavía no
-  producido.
-- Ejecución confirmatoria: pendiente de GitHub Actions desde el commit público
-  sellado. Su artefacto se publicará posteriormente sin modificarlo.
 - Prueba de parada de un nodo real independiente: no realizada.
 - Manifiesto de nodo: definido y validable.
 - Instalación de Tor o I2P: no realizada.
@@ -109,11 +85,6 @@ La interpretación íntegra de ambos resultados y de sus límites se conserva en
 [`RESULT_INTERPRETATION.md`](RESULT_INTERPRETATION.md). Que un resultado haya
 pasado no convierte la simulación en infraestructura productiva; que otro haya
 fallado no invalida su evidencia. Ambos restringen lo que podemos afirmar.
-
-El nuevo contrato se conserva en
-[`QUORUM_FRESHNESS_PROTOCOL.md`](QUORUM_FRESHNESS_PROTOCOL.md) y la separación
-entre publicación, ejecución e importación en
-[`CONFIRMATION_EXECUTION.md`](CONFIRMATION_EXECUTION.md).
 
 ## Límite central
 

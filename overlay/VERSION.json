@@ -1,8 +1,8 @@
 {
   "name": "Digital Field Overlay Habitat",
-  "version": "0.2.2",
-  "status": "preregistered-results-preserved-one-passed-one-failed",
+  "version": "0.2.3",
+  "status": "public-preregistration-awaiting-external-confirmation",
   "date": "2026-09-30",
-  "ancestor": "Digital_Field_Overlay_Habitat_v0.2.1",
+  "ancestor": "Digital_Field_Overlay_Habitat_v0.2.2",
   "privacy": "public-design-no-private-evidence"
 }

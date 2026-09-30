@@ -1,0 +1,84 @@
+name: Confirm Overlay Habitat v0.2.3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "overlay/QUORUM_FRESHNESS_PROTOCOL.md"
+      - "overlay/CONFIRMATION_EXECUTION.md"
+      - "overlay/CLAUDE_REVIEW_0004.md"
+      - "overlay/scripts/test_quorum_freshness.py"
+      - "overlay/scripts/diagnose_seed95.py"
+      - "overlay/scripts/ed25519_fixture.py"
+      - "overlay/fixtures/ed25519-test/TEST_KEYS.json"
+      - ".github/workflows/overlay-v023-confirmation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  externally-timestamped-confirmation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the exact public preregistration
+        uses: actions/checkout@v5
+
+      - name: Verify preregistered package
+        run: python3 overlay/verify.py
+
+      - name: Execute commit-derived confirmation
+        run: |
+          mkdir -p _ci_results
+          python3 overlay/scripts/test_quorum_freshness.py \
+            --anchor "$GITHUB_SHA" \
+            --output _ci_results/QUORUM_FRESHNESS_RESULT.json
+
+      - name: Diagnose preserved development seed 95
+        run: |
+          python3 overlay/scripts/diagnose_seed95.py \
+            --output _ci_results/SEED_95_DIAGNOSTIC.json
+
+      - name: Record public execution provenance
+        env:
+          DF_STARTED_AT: ${{ github.event.head_commit.timestamp }}
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path("_ci_results")
+          files = {}
+          for path in sorted(root.glob("*.json")):
+              files[path.name] = {
+                  "bytes": path.stat().st_size,
+                  "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+              }
+          record = {
+              "schema": "digital-field-github-execution-provenance/v1",
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_attempt": os.environ["GITHUB_RUN_ATTEMPT"],
+              "workflow": os.environ["GITHUB_WORKFLOW"],
+              "event_commit_timestamp": os.getenv("DF_STARTED_AT"),
+              "recorded_at_utc": datetime.now(timezone.utc).isoformat(),
+              "files_before_provenance": files,
+              "external_time_scope": "GitHub-hosted workflow record; not an independent non-GitHub timestamp",
+          }
+          (root / "EXECUTION_PROVENANCE.json").write_text(
+              json.dumps(record, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+          cd _ci_results
+          sha256sum *.json > CHECKSUMS.sha256
+
+      - name: Preserve exact external results
+        uses: actions/upload-artifact@v4
+        with:
+          name: overlay-v0.2.3-confirmation-${{ github.sha }}
+          path: _ci_results/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,6 +1,6 @@
 {
   "title": "Digital Field Genealogy and Reactivation Portal",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "date": "2026-09-30",
   "creator": "Digital Field",
   "status": "public",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Digital Field Overlay Habitat",
-      "version": "0.2.2"
+      "version": "0.2.3"
     }
   ],
   "contains_private_transcripts": false,

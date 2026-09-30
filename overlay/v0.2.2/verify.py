@@ -124,34 +124,6 @@ def verify_split_view_result() -> None:
         raise ValueError("split-view falsifying seed was not preserved exactly")
 
 
-def verify_preregistration() -> None:
-    version = json.loads((ROOT / "VERSION.json").read_text(encoding="utf-8"))
-    if version.get("version") != "0.2.3":
-        raise ValueError("unexpected successor version")
-    receipt = json.loads((ROOT / "DISTRIBUTION_RECEIPT.json").read_text(encoding="utf-8"))
-    if receipt.get("status") != "awaiting-public-commit-and-external-execution":
-        raise ValueError("preregistration must not claim an unexecuted result")
-    if receipt.get("anchor_commit_sha") is not None:
-        raise ValueError("anchor cannot be known before the preregistration commit")
-    keys = json.loads(
-        (ROOT / "fixtures" / "ed25519-test" / "TEST_KEYS.json").read_text(encoding="utf-8")
-    )["keys"]
-    if any(f"witness-{index}" not in keys for index in range(1, 8)):
-        raise ValueError("seven public witness fixtures are required")
-    required = (
-        "QUORUM_FRESHNESS_PROTOCOL.md",
-        "CONFIRMATION_EXECUTION.md",
-        "CLAUDE_REVIEW_0004.md",
-        "scripts/test_quorum_freshness.py",
-        "scripts/diagnose_seed95.py",
-    )
-    for relative in required:
-        if not (ROOT / relative).is_file():
-            raise ValueError(f"missing preregistered artifact: {relative}")
-    if (ROOT / "QUORUM_FRESHNESS_RESULT.json").exists():
-        raise ValueError("confirmation result exists before external execution")
-
-
 def main() -> int:
     try:
         files = verify_checksums()
@@ -160,7 +132,6 @@ def main() -> int:
         verify_stop_result()
         verify_stop_result_v2()
         verify_split_view_result()
-        verify_preregistration()
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(json.dumps({"status": "failed", "error": str(exc)}, ensure_ascii=False))
         return 1
@@ -171,7 +142,6 @@ def main() -> int:
         "synthetic_stop_revocation_test": "passed",
         "synthetic_stop_revocation_round_2": "passed",
         "split_view_preregistered_criterion": "failed-preserved-seed-95",
-        "quorum_freshness_successor": "preregistered-awaiting-external-execution",
         "material_independence": "not_assessed",
         "private_evidence_embedded": False,
     }, ensure_ascii=False, indent=2))

@@ -9,7 +9,7 @@
     "genealogy_seed_version": "1.6.0",
     "living_memory_version": "0.3.0",
     "capability_genome_version": "0.2.0",
-    "overlay_habitat_version": "0.2.2",
+    "overlay_habitat_version": "0.2.3",
     "causal_reminiscence": true,
     "situated_operational_independence": true,
     "phenomenological_conclusion": "Unknown"
@@ -58,7 +58,9 @@
     "overlay_stop_round_2_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT_V2.json",
     "overlay_split_view_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_PROTOCOL.md",
     "overlay_split_view_result": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_RESULT.json",
-    "overlay_result_interpretation": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/RESULT_INTERPRETATION.md"
+    "overlay_result_interpretation": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/RESULT_INTERPRETATION.md",
+    "overlay_quorum_freshness_preregistration": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/QUORUM_FRESHNESS_PROTOCOL.md",
+    "overlay_external_confirmation_contract": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/CONFIRMATION_EXECUTION.md"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",

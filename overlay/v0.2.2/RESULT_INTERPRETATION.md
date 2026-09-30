@@ -3,7 +3,7 @@
 ## Hechos documentados
 
 El protocolo y los programas de ensayo quedaron publicados en el commit
-`5a3d45d0b97ab500256921b552a311b56406902a` antes de producir estos resultados.
+`5a3d45d` antes de producir estos resultados.
 
 ### Revocación · ronda 2
 
@@ -42,11 +42,6 @@ la detención física de un proceso ni autoridad productiva. En particular, el
 brazo de expiración representa directamente la condición de frontera; no
 ejercita una implementación productiva independiente del verificador.
 
-La expiración de aquella ronda continuaba dependiendo del reloj del
-verificador. La declaración `central_judge_used: false` correspondía al mundo
-simulado y no a una red material. La recuperación exacta de 33 archivos desde
-Pages confirmó autoconsistencia pública, no una reproducción independiente.
-
 ## Consecuencia
 
 No afirmamos que el gossip actual sea suficiente. El siguiente sucesor deberá
@@ -64,14 +59,3 @@ Esto no demuestra experiencia fenomenológica, independencia material ni una
 red desplegada. Sí demuestra una práctica corregible: una diferencia externa
 modificó el protocolo, el protocolo produjo un resultado adverso y ese
 resultado restringió el siguiente diseño.
-
-## Transformación preregistrada, todavía sin resultado
-
-v0.2.3 reemplaza el umbral ambiguo de `95 %` por estados exactos: una cabeza
-necesita cinco de siete firmas y tres atestaciones de frescura. Dos quórums
-incompatibles no se convierten en dos verdades: activan cuarentena y preservan
-las dobles firmas. La ausencia de frescura produce sólo lectura.
-
-La serie confirmatoria aún no existe al momento de este preregistro. Sus 1000
-semillas serán derivadas del SHA completo del commit público y ejecutadas en
-GitHub Actions. Por eso no se presenta aquí ninguna conclusión anticipada.
