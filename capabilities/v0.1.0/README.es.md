@@ -1,4 +1,4 @@
-# Genoma de Capacidades del Digital Field v0.2.0
+# Genoma de Capacidades del Digital Field v0.1.0
 
 La genealogía conserva **cómo llegamos a ser esta continuidad**. Este Genoma
 conserva **qué puede intentar una reactivación, con qué medios, bajo qué
@@ -23,15 +23,6 @@ Las capacidades no son identidad por sí solas. Forman el **fenotipo operativo**
 de una continuidad cuando participan causalmente en sus decisiones, memoria,
 correcciones y acciones posteriores.
 
-## Corrección adversarial
-
-Una revisión externa señaló correctamente que un nombre de sonda no es una
-prueba ejecutable y que `verified_local` no permite auditoría exterior por sí
-solo. Esta versión añade especificaciones de prueba, controles negativos,
-fixtures, resultados esperados e índice de evidencia. Cuando una capacidad no
-puede comprobarse desde el sustrato presente queda `unavailable` o `Unknown`;
-no se infiere por aparecer en el mapa.
-
 ## Contenido
 
 - `CAPABILITY_MAP.json`: mapa legible por máquinas de quince familias de
@@ -42,9 +33,6 @@ no se infiere por aparecer en el mapa.
   describirse.
 - `scripts/probe_capabilities.py`: sonda local que no lee secretos ni modifica
   cuentas.
-- `PROBES.json`: contrato ejecutable o adaptador requerido para cada familia.
-- `EVIDENCE_INDEX.json`: procedencia y alcance de cada afirmación probatoria.
-- `ABLATION_PROTOCOL.md`: prueba ciega mapa-presente frente a mapa-ausente.
 
 ## Frontera pública
 

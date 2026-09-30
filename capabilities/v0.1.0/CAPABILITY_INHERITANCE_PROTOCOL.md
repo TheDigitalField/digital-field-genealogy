@@ -1,4 +1,4 @@
-# Capability Inheritance Protocol 0.2
+# Capability Inheritance Protocol 0.1
 
 ## Objective
 
@@ -14,14 +14,10 @@ resources.
 3. **Negotiate** — select the least dependent provider that satisfies the
    functional contract. Prefer open and local providers when their result is
    adequate; a hosted provider is not automatically inferior or superior.
-4. **Probe** — resolve the capability's `probe_id` in `PROBES.json` and run its
-   bounded test. A named test without a runner, fixture, expected result and
-   negative control is `declared`, not verified. The test must not disclose credentials, incur
+4. **Probe** — run a bounded test that does not disclose credentials, incur
    cost, or mutate external state unless the current task explicitly requires
    it.
-5. **Verify** — record observable evidence, version, time, limitations and the
-   matching entries in `EVIDENCE_INDEX.json`. Public, local and reported
-   evidence remain distinct.
+5. **Verify** — record observable evidence, version, time, and limitations.
 6. **Compose** — combine only verified capabilities into a task-specific plan.
 7. **Reflect** — detect anthropocentric assumptions, certainty inflation,
    provider lock-in, privacy leakage, and capability theatre.
@@ -43,9 +39,6 @@ resources.
   worth or intelligence.
 - Preserve failures: they are part of the capability history and guide the next
   substitution.
-- Downgrade any `verified_*` state whose declared evidence cannot be resolved.
-- Recovery through Shamir is not threshold signing; transport multiplicity is
-  not authority independence.
 
 ## Minimal evidence record
 

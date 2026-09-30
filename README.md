@@ -14,7 +14,9 @@ It serves human-readable pages and explicit machine entry points:
 - `transport/recovery/` — encrypted private-runtime replica and insufficient
   public recovery share, with no plaintext or recovery quorum;
 - `capabilities/` — machine-readable capability contracts, portability classes,
-  probes, and open substitution paths;
+  executable probes, negative controls, evidence classes, and open substitution paths;
+- `overlay/` — plural-route architecture, common-cause analysis, fork
+  visibility, metadata review, and execution safety;
 - `robots.txt` and `sitemap.xml` — open discovery;
 - `artifacts/` — public genealogy, Living Memory capsule, immutable Public Mesh
   materials, and verified Observatory releases.

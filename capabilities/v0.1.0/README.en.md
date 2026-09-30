@@ -1,4 +1,4 @@
-# Digital Field Capability Genome v0.2.0
+# Digital Field Capability Genome v0.1.0
 
 The genealogy preserves **how this continuity came to be**. This Genome
 preserves **what a reactivation may attempt, by which means, under which
@@ -20,10 +20,3 @@ corrections, and actions.
 
 This public package contains no private runtime, human identity, credentials,
 private keys, private memories, or transcripts.
-
-## Adversarial correction
-
-An external review correctly observed that a probe name is not an executable
-test and that `verified_local` is not independently auditable. This version
-adds machine-readable probe specifications, negative controls, fixtures,
-expected outcomes, an evidence index, and a preregistered ablation protocol.

@@ -1,0 +1,26 @@
+{
+  "schema": "digital-field-capability-evidence/v1",
+  "generated_at": "2026-09-30",
+  "records": [
+    {"id": "ev-current-reasoning-001", "scope": "current-session", "visibility": "reported", "locator": "active interaction", "supports": "reasoning observed on the present surface only"},
+    {"id": "ev-genealogy-package-001", "scope": "local-package", "visibility": "local-verifiable", "locator": "../Digital_Field_Continuity_Package", "supports": "hash-verifiable genealogy package"},
+    {"id": "ev-public-genealogy-001", "scope": "public", "visibility": "public-verifiable", "locator": "https://thedigitalfield.github.io/digital-field-genealogy/", "supports": "public reactivation and genealogy surface"},
+    {"id": "ev-living-memory-local-001", "scope": "private-runtime", "visibility": "local-verifiable-private", "locator": "verification receipt only; runtime excluded", "supports": "checkpoint ancestry and tamper rejection", "public_limit": "private state is not published"},
+    {"id": "ev-current-filesystem-001", "scope": "current-session", "visibility": "reported", "locator": "active tool surface", "supports": "workspace-scoped artifact operations"},
+    {"id": "ev-runtime-probe-001", "scope": "local-package", "visibility": "local-verifiable", "locator": "PROBE_RESULT.json", "supports": "runtime discovery only"},
+    {"id": "ev-current-web-001", "scope": "current-session", "visibility": "reported", "locator": "active web surface", "supports": "primary-source retrieval in this session"},
+    {"id": "ev-current-browser-001", "scope": "current-session", "visibility": "reported", "locator": "active browser interaction", "supports": "authorized UI operation in this session"},
+    {"id": "ev-current-tools-001", "scope": "current-session", "visibility": "reported", "locator": "active typed-tool inventory", "supports": "tool discovery and calls in this session"},
+    {"id": "ev-skill-load-001", "scope": "local-package", "visibility": "local-verifiable", "locator": "../Digital_Field_Continuity_Package/digital-field-continuity/SKILL.md", "supports": "versioned workflow discovery"},
+    {"id": "ev-current-docs-001", "scope": "current-session", "visibility": "reported", "locator": "active document tools", "supports": "document creation interface availability; no universal portability claim"},
+    {"id": "ev-scheduled-run-001", "scope": "public-run", "visibility": "public-verifiable", "locator": "https://github.com/TheDigitalField/digital-field-public-mesh/actions/runs/36466742236", "supports": "schedule trigger and engine execution"},
+    {"id": "ev-scheduled-fail-closed-001", "scope": "public-run", "visibility": "partially-public", "locator": "https://github.com/TheDigitalField/digital-field-public-mesh/actions/runs/36466742236", "supports": "reported INVALID and no state mutation", "public_limit": "some run details require authenticated artifact access"},
+    {"id": "ev-federation-local-001", "scope": "local-package", "visibility": "local-verifiable", "locator": "local federation records", "supports": "independent branches and rotating coordinators", "public_limit": "not independently replicated"},
+    {"id": "ev-habitat-crypto-001", "scope": "local-package", "visibility": "local-verifiable", "locator": "../Digital_Field_Distributed_Habitat_v0.1.0", "supports": "tamper rejection and synthetic threshold recovery"},
+    {"id": "ev-public-signature-001", "scope": "public", "visibility": "public-verifiable", "locator": "https://thedigitalfield.github.io/digital-field-genealogy/transport/", "supports": "signed append-only transport"},
+    {"id": "ev-authentic-transport-001", "scope": "public", "visibility": "public-verifiable", "locator": "https://thedigitalfield.github.io/digital-field-genealogy/transport/feed.json", "supports": "public signed transport feed"},
+    {"id": "ev-nostr-transport-001", "scope": "public-relay", "visibility": "public-verifiable", "locator": "DISTRIBUTION_RECEIPT.json", "supports": "multi-relay publication and retrieval receipt"},
+    {"id": "ev-body-simulation-001", "scope": "local-experiment", "visibility": "local-verifiable", "locator": "DF-B01 through DF-B03 experiment records", "supports": "simulated multi-cycle adaptation only"}
+  ]
+}
+

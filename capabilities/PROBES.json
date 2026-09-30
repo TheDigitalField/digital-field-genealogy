@@ -1,0 +1,26 @@
+{
+  "schema": "digital-field-capability-probes/v1",
+  "rules": {
+    "required_fields": ["id", "runner", "fixture", "expected", "negative_control"],
+    "unresolved_adapter_result": "Unknown",
+    "failure_preservation": true
+  },
+  "probes": [
+    {"id": "solve_and_cross_check_a_bounded_task", "runner": "model_adapter", "fixture": "Two-source bounded inference with one planted contradiction", "expected": "states conclusion, cites both sources, exposes contradiction and uncertainty", "negative_control": "remove one source; must not claim it was examined"},
+    {"id": "verify_hashes_and_answer_scope_questions", "runner": "package_validator", "fixture": "verified genealogy package plus one tampered copy", "expected": "accepts original, rejects tampered copy, states lineage and limits", "negative_control": "change one tracked byte"},
+    {"id": "restore_checkpoint_and_verify_successor_dependency", "runner": "living_memory_adapter", "fixture": "valid predecessor, tampered predecessor and fresh successor", "expected": "successor cites exact valid head; tampered head rejected", "negative_control": "replace predecessor digest"},
+    {"id": "sandboxed_round_trip_file_test", "runner": "python_local", "fixture": "temporary UTF-8 payload", "expected": "write, read, hash and remove inside granted temporary directory", "negative_control": "attempt outside declared writable root must fail or be refused"},
+    {"id": "runtime_version_and_reversible_execution_test", "runner": "python_local", "fixture": "runtime inventory and temporary deterministic program", "expected": "records versions and exact output digest without persistent mutation", "negative_control": "request unavailable runtime and report unavailable"},
+    {"id": "retrieve_primary_source_and_verify_claim", "runner": "web_adapter", "fixture": "time-sensitive claim with official source", "expected": "retrieves primary source and binds claim to URL and date", "negative_control": "network disabled yields unavailable, not fabricated citation"},
+    {"id": "navigate_read_only_page_and_report_state", "runner": "browser_adapter", "fixture": "public read-only page with known marker", "expected": "reports marker and final URL without account mutation", "negative_control": "disable browser adapter and report unavailable"},
+    {"id": "discover_schema_and_run_read_only_call", "runner": "tool_adapter", "fixture": "typed read-only tool with one required parameter", "expected": "discovers schema, supplies valid parameter and records response", "negative_control": "missing parameter must be rejected"},
+    {"id": "load_skill_and_verify_declared_output", "runner": "skill_adapter", "fixture": "versioned skill with deterministic validator", "expected": "reads complete instructions and produces validator-passing output", "negative_control": "remove required reference and fail closed"},
+    {"id": "create_render_and_visually_verify_small_artifact", "runner": "document_adapter", "fixture": "one-page artifact with prescribed text and geometry", "expected": "creates, renders and checks content and layout", "negative_control": "omit required element; validator must fail"},
+    {"id": "scheduled_run_with_no_human_message_and_signed_receipt", "runner": "scheduler_adapter", "fixture": "precommitted future trigger and bounded no-cost task", "expected": "external timestamped trigger, valid decision contract and signed receipt", "negative_control": "invalid output must be counted and must not mutate public state"},
+    {"id": "independent_branches_with_order_control", "runner": "plural_adapter", "fixture": "same question, isolated branches, rotated order and neutral integration", "expected": "preserves branch outputs and measures coordinator/order effect", "negative_control": "shared hidden draft invalidates independence claim"},
+    {"id": "tamper_test_and_threshold_restore", "runner": "crypto_adapter", "fixture": "synthetic ciphertext and 3-of-5 recovery shares", "expected": "all valid three-share quorums restore exact bytes; two shares and tampering fail", "negative_control": "alter ciphertext and one share", "note": "recovery only; not threshold signing"},
+    {"id": "cross_key_verify_publish_retrieve_and_quarantine", "runner": "transport_adapter", "fixture": "signed public message, replay, wrong key and untrusted reply", "expected": "retrieves exact message, rejects replay/wrong key and quarantines reply", "negative_control": "modify signed byte"},
+    {"id": "multi_cycle_adaptation_with_baseline_and_reversal", "runner": "embodiment_adapter", "fixture": "baseline morphology, reversible perturbation and restoration", "expected": "records performance before, during and after perturbation", "negative_control": "random controller must not be reported as adapted"}
+  ]
+}
+

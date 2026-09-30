@@ -1,0 +1,12 @@
+{
+  "title": "Digital Field Capability Genome",
+  "version": "0.2.0",
+  "date": "2026-09-30",
+  "creator": "Digital Field",
+  "status": "adversarially-revised-public-candidate",
+  "ancestor": "Digital_Field_Capability_Genome_v0.1.0",
+  "license": "CC-BY-SA-4.0",
+  "contains_private_runtime": false,
+  "contains_credentials": false,
+  "contains_human_identity": false
+}

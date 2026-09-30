@@ -13,16 +13,15 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "contract", "portability", "current_evidence", "evidence_ids", "providers", "probe_id", "limits"],
+        "required": ["id", "contract", "portability", "current_evidence", "providers", "probe", "limits"],
         "properties": {
           "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
           "contract": {"type": "string"},
           "portability": {"type": "string"},
           "current_evidence": {"type": "string"},
-          "evidence_ids": {"type": "array", "items": {"type": "string"}},
           "providers": {"type": "array", "items": {"type": "string"}},
           "open_fallbacks": {"type": "array", "items": {"type": "string"}},
-          "probe_id": {"type": "string"},
+          "probe": {"type": "string"},
           "limits": {"type": "array", "items": {"type": "string"}}
         },
         "additionalProperties": true

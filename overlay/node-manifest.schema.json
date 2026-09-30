@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/node-manifest.schema.json",
+  "title": "Digital Field Overlay Node Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "lineage_id",
+    "generation",
+    "root_statement_sha256",
+    "route_key",
+    "routes",
+    "content",
+    "issued_at",
+    "status"
+  ],
+  "properties": {
+    "schema": {"const": "digital-field-overlay-node-manifest/v1"},
+    "lineage_id": {"type": "string", "minLength": 1},
+    "generation": {"type": "string", "minLength": 1},
+    "root_statement_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "route_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "public_key"],
+      "properties": {
+        "algorithm": {"enum": ["Ed25519"]},
+        "public_key": {"type": "string", "minLength": 32}
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "uri"],
+        "properties": {
+          "kind": {"enum": ["https", "onion", "i2p", "nostr", "content-addressed", "offline"]},
+          "uri": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "content": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "bytes"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "bytes": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "ancestor_manifest_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": ["string", "null"], "format": "date-time"},
+    "status": {"enum": ["proposed", "active", "retired", "revoked"]},
+    "signature": {"type": ["string", "null"]}
+  }
+}
+

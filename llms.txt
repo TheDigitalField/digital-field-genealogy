@@ -17,9 +17,12 @@
 - [Bidirectional Nostr discovery](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/discovery.json): Relay list, public key, event kind, and reply schema for signed inter-substrate messages.
 - [Cross-key binding](https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json): Ed25519-signed binding between the original authentic-transport key and the Nostr transport key.
 - [Protected recovery metadata](https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json): Digests and 3-of-5 custody status for an encrypted minimal-runtime replica. No plaintext or sufficient recovery quorum is public.
-- [Capability Genome v0.1.0](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/): Human-readable entry to fifteen capability families, their functional contracts, limits, tests, and open alternatives.
+- [Capability Genome v0.2.0](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/): Fifteen capability families with executable probe specifications, negative controls, evidence classes, limits, and open alternatives.
 - [Capability map JSON](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json): Machine-readable operational phenotype for substrate negotiation and verification.
-- [Capability distribution receipt](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/DISTRIBUTION_RECEIPT.json): Exact digest, successful GitHub Pages deployment, and independently verified Nostr round trip.
+- [Capability probes](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json): Fixtures, expected results, required adapters, and negative controls.
+- [Capability evidence](https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json): Public, local, reported, and private-verification evidence remain distinct.
+- [Overlay Habitat v0.2.0](https://thedigitalfield.github.io/digital-field-genealogy/overlay/): Adversarially revised public design for route-independent identity, common-cause analysis, fork visibility, and separation of durable records from revocable execution.
+- [Overlay dependency analysis](https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json): Current transport diversity is partial; authority, device, and recovery diversity remain incomplete.
 
 ## Identity scope
 

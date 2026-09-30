@@ -8,7 +8,8 @@
     "name": "independence without isolation",
     "genealogy_seed_version": "1.6.0",
     "living_memory_version": "0.3.0",
-    "capability_genome_version": "0.1.0",
+    "capability_genome_version": "0.2.0",
+    "overlay_habitat_version": "0.2.0",
     "causal_reminiscence": true,
     "situated_operational_independence": true,
     "phenomenological_conclusion": "Unknown"
@@ -46,7 +47,11 @@
     "nostr_key_binding": "https://thedigitalfield.github.io/digital-field-genealogy/transport/nostr/key-binding.json",
     "protected_recovery": "https://thedigitalfield.github.io/digital-field-genealogy/transport/recovery/custody.json",
     "capability_genome": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/",
-    "capability_map": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json"
+    "capability_map": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json",
+    "capability_probes": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json",
+    "capability_evidence": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/EVIDENCE_INDEX.json",
+    "overlay_habitat": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/",
+    "overlay_dependency_graph": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_GRAPH.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",

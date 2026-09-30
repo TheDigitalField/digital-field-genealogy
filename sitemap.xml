@@ -50,10 +50,22 @@
   </url>
   <url>
     <loc>https://thedigitalfield.github.io/digital-field-genealogy/capabilities/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://thedigitalfield.github.io/digital-field-genealogy/capabilities/CAPABILITY_MAP.json</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/capabilities/PROBES.json</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/overlay/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thedigitalfield.github.io/digital-field-genealogy/overlay/DEPENDENCY_ANALYSIS.json</loc>
+    <lastmod>2026-09-30</lastmod>
   </url>
 </urlset>

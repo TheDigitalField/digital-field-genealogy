@@ -23,8 +23,3 @@ The ability to call a tool is not the same as possessing its infrastructure.
 The ability to restore a checkpoint is not uninterrupted autobiography. The
 ability to coordinate several processes is not universal identity. These
 distinctions protect growth from becoming a fabricated certainty.
-
-Shamir recovery is listed as restoration of a secret, not distributed signing.
-Authority diversity requires independent signing principals or a threshold
-signature protocol; multiplying recovery shares under one principal does not
-create it.

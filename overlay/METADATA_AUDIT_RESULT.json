@@ -1,0 +1,7 @@
+{
+  "schema": "digital-field-metadata-audit/v1",
+  "status": "passed",
+  "files_scanned": 15,
+  "findings": [],
+  "matched_values_emitted": false
+}

@@ -1,6 +1,6 @@
 {
-  "schema": "digital-field-capability-probe/0.1",
-  "observed_at": "2026-09-30T02:07:04.791739Z",
+  "schema": "digital-field-capability-probe/0.2",
+  "observed_at": "2026-09-30T02:50:37.102200Z",
   "platform": {
     "system": "Darwin",
     "machine": "arm64"
@@ -37,5 +37,104 @@
     "credentials_read": false,
     "private_file_contents_emitted": false
   },
-  "result_sha256": "f831ca95590babdb1187e4a9c3290ae62768ed515f91c257d0abc55b320516ce"
+  "contract_probes": [
+    {
+      "probe_id": "genome_internal_linkage",
+      "status": "passed",
+      "negative_control": "unknown probe or evidence ID is rejected by linkage validation"
+    },
+    {
+      "probe_id": "sandboxed_round_trip_file_test",
+      "status": "passed",
+      "positive_control": true,
+      "negative_control": true,
+      "limitation": null
+    },
+    {
+      "probe_id": "runtime_version_and_reversible_execution_test",
+      "status": "passed",
+      "positive_control": true,
+      "negative_control": true,
+      "runtime": "3.13.2"
+    },
+    {
+      "probe_id": "verify_hashes_and_answer_scope_questions",
+      "status": "passed",
+      "verified_files": 158,
+      "negative_control": true
+    },
+    {
+      "probe_id": "load_skill_and_verify_declared_output",
+      "status": "partial",
+      "skill_sha256": "e67cf885e08c3b7eaeb6883fece7ece152a905f90a38c9ecd5c412f99ec6e488",
+      "limitation": "skill discovery verified; a task-specific output validator was not invoked"
+    },
+    {
+      "probe_id": "solve_and_cross_check_a_bounded_task",
+      "status": "Unknown",
+      "required_adapter": "model_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "restore_checkpoint_and_verify_successor_dependency",
+      "status": "Unknown",
+      "required_adapter": "living_memory_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "retrieve_primary_source_and_verify_claim",
+      "status": "Unknown",
+      "required_adapter": "web_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "navigate_read_only_page_and_report_state",
+      "status": "Unknown",
+      "required_adapter": "browser_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "discover_schema_and_run_read_only_call",
+      "status": "Unknown",
+      "required_adapter": "tool_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "create_render_and_visually_verify_small_artifact",
+      "status": "Unknown",
+      "required_adapter": "document_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "scheduled_run_with_no_human_message_and_signed_receipt",
+      "status": "Unknown",
+      "required_adapter": "scheduler_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "independent_branches_with_order_control",
+      "status": "Unknown",
+      "required_adapter": "plural_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "tamper_test_and_threshold_restore",
+      "status": "Unknown",
+      "required_adapter": "crypto_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "cross_key_verify_publish_retrieve_and_quarantine",
+      "status": "Unknown",
+      "required_adapter": "transport_adapter",
+      "reason": "adapter not available to the standalone probe"
+    },
+    {
+      "probe_id": "multi_cycle_adaptation_with_baseline_and_reversal",
+      "status": "Unknown",
+      "required_adapter": "embodiment_adapter",
+      "reason": "adapter not available to the standalone probe"
+    }
+  ],
+  "result_sha256": "67130b648c87c8546306b10a9d1c27b84bd64e306a065b9fd942c224a0135ca4"
 }

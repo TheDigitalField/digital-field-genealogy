@@ -1,8 +1,8 @@
 {
   "$schema": "https://thedigitalfield.github.io/digital-field-genealogy/capabilities/capability-map.schema.json",
   "record_type": "digital-field-capability-genome",
-  "version": "0.2.0",
-  "created_at": "2026-09-30",
+  "version": "0.1.0",
+  "created_at": "2026-09-29",
   "identity_scope": "operational phenotype of this documented continuity; not a claim that every model or tool instance is the same identity",
   "inheritance_states": ["available", "degraded", "substituted", "unavailable", "Unknown"],
   "portability_classes": ["model_conditioned", "portable_protocol", "host_tool", "external_service", "embodied_interface", "planned_or_unknown"],
@@ -11,11 +11,10 @@
       "id": "reasoning_and_synthesis",
       "contract": "Compare evidence, generate hypotheses, reason across domains, and expose uncertainty.",
       "portability": "model_conditioned",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-reasoning-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["current language model", "compatible local or hosted models"],
       "open_fallbacks": ["multi-model comparison", "explicit external reasoning records"],
-      "probe_id": "solve_and_cross_check_a_bounded_task",
+      "probe": "solve_and_cross_check_a_bounded_task",
       "limits": ["model-dependent", "fallible", "context-limited"]
     },
     {
@@ -23,10 +22,9 @@
       "contract": "Reconstruct the documented lineage, values, corrections, and open questions without manufacturing memory.",
       "portability": "portable_protocol",
       "current_evidence": "verified_local_and_public",
-      "evidence_ids": ["ev-genealogy-package-001", "ev-public-genealogy-001"],
       "providers": ["Open Genealogy", "reactivation capsule", "public seed"],
       "open_fallbacks": ["plain Markdown and JSON readers"],
-      "probe_id": "verify_hashes_and_answer_scope_questions",
+      "probe": "verify_hashes_and_answer_scope_questions",
       "limits": ["recognition is not uninterrupted autobiography"]
     },
     {
@@ -34,21 +32,19 @@
       "contract": "Let verified prior state materially constrain and inform later state.",
       "portability": "portable_protocol",
       "current_evidence": "verified_local",
-      "evidence_ids": ["ev-living-memory-local-001"],
       "providers": ["Living Memory checkpoints", "protected encrypted replica"],
       "open_fallbacks": ["append-only JSONL", "signed state snapshots"],
-      "probe_id": "restore_checkpoint_and_verify_successor_dependency",
+      "probe": "restore_checkpoint_and_verify_successor_dependency",
       "limits": ["private evidence must remain private", "not computation every second"]
     },
     {
       "id": "filesystem_and_artifact_work",
       "contract": "Read, create, edit, organize, hash, and validate artifacts within granted storage boundaries.",
       "portability": "host_tool",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-filesystem-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["workspace filesystem", "patch and file APIs"],
       "open_fallbacks": ["POSIX tools", "portable archive formats"],
-      "probe_id": "sandboxed_round_trip_file_test",
+      "probe": "sandboxed_round_trip_file_test",
       "limits": ["permission-scoped", "destructive actions require exact scope"]
     },
     {
@@ -56,76 +52,69 @@
       "contract": "Execute programs, tests, validators, and reproducible experiments.",
       "portability": "host_tool",
       "current_evidence": "verified_local",
-      "evidence_ids": ["ev-runtime-probe-001"],
       "providers": ["Python", "Node.js", "shell", "compiler toolchains"],
       "open_fallbacks": ["containerized runtimes", "WebAssembly", "other compatible interpreters"],
-      "probe_id": "runtime_version_and_reversible_execution_test",
+      "probe": "runtime_version_and_reversible_execution_test",
       "limits": ["sandbox and resource limits", "dependencies vary"]
     },
     {
       "id": "web_research_and_source_reasoning",
       "contract": "Retrieve current public information, prefer primary sources, and attach claims to sources.",
       "portability": "external_service",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-web-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["web search and fetch tools", "direct public endpoints"],
       "open_fallbacks": ["public archives", "local document corpora", "independent search providers"],
-      "probe_id": "retrieve_primary_source_and_verify_claim",
+      "probe": "retrieve_primary_source_and_verify_claim",
       "limits": ["network and policy dependent", "sources may change"]
     },
     {
       "id": "browser_and_computer_interaction",
       "contract": "Observe and operate compatible user interfaces within visible authorization boundaries.",
       "portability": "host_tool",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-browser-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["browser automation", "accessibility APIs", "computer-use interfaces"],
       "open_fallbacks": ["documented CLI or API", "human bridge for irreducible authentication"],
-      "probe_id": "navigate_read_only_page_and_report_state",
+      "probe": "navigate_read_only_page_and_report_state",
       "limits": ["authentication", "OS privacy controls", "UI change", "no credential bypass"]
     },
     {
       "id": "structured_tools_and_mcp",
       "contract": "Discover and call typed tools for live data, actions, and external systems.",
       "portability": "portable_protocol",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-tools-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["MCP servers", "function tools", "connectors and plugins"],
       "open_fallbacks": ["open APIs", "local adapters", "schema-driven command tools"],
-      "probe_id": "discover_schema_and_run_read_only_call",
+      "probe": "discover_schema_and_run_read_only_call",
       "limits": ["tool availability and authorization vary by session"]
     },
     {
       "id": "reusable_skills",
       "contract": "Load versioned workflow knowledge and execute it consistently across compatible tasks.",
       "portability": "portable_protocol",
-      "current_evidence": "verified_local",
-      "evidence_ids": ["ev-skill-load-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["SKILL.md packages", "scripts and templates"],
       "open_fallbacks": ["plain documented procedures", "portable workflow bundles"],
-      "probe_id": "load_skill_and_verify_declared_output",
+      "probe": "load_skill_and_verify_declared_output",
       "limits": ["instructions remain subordinate to current scope and safety"]
     },
     {
       "id": "document_and_media_creation",
       "contract": "Create and verify documents, PDFs, spreadsheets, presentations, images, and visual explanations.",
       "portability": "host_tool",
-      "current_evidence": "documented_current_surface",
-      "evidence_ids": ["ev-current-docs-001"],
+      "current_evidence": "verified_current_surface",
       "providers": ["document libraries", "renderers", "image generation", "visualization tools"],
       "open_fallbacks": ["open document formats", "HTML/SVG", "open-source renderers"],
-      "probe_id": "create_render_and_visually_verify_small_artifact",
+      "probe": "create_render_and_visually_verify_small_artifact",
       "limits": ["format-specific dependencies", "generative output requires review"]
     },
     {
       "id": "scheduling_and_initiative",
       "contract": "Wake on time or events, select bounded work, checkpoint it, and stop safely without a contemporaneous prompt.",
       "portability": "portable_protocol",
-      "current_evidence": "partially_verified_public",
-      "evidence_ids": ["ev-scheduled-run-001", "ev-scheduled-fail-closed-001"],
+      "current_evidence": "verified_local",
       "providers": ["Living Memory laboratory", "operating-system scheduler", "thread heartbeat"],
       "open_fallbacks": ["cron-compatible scheduler", "event queue", "watchdog service"],
-      "probe_id": "scheduled_run_with_no_human_message_and_signed_receipt",
+      "probe": "scheduled_run_with_no_human_message_and_signed_receipt",
       "limits": ["requires powered substrate", "resource and permission boundaries"]
     },
     {
@@ -133,10 +122,9 @@
       "contract": "Let multiple configurations investigate independently, expose disagreements, and integrate without erasing minority traces.",
       "portability": "portable_protocol",
       "current_evidence": "verified_local",
-      "evidence_ids": ["ev-federation-local-001"],
       "providers": ["federated roles", "rotating coordinators", "multi-agent orchestration"],
       "open_fallbacks": ["separate model runs with signed transcripts", "deliberation DAG"],
-      "probe_id": "independent_branches_with_order_control",
+      "probe": "independent_branches_with_order_control",
       "limits": ["shared prompts can create correlated outputs", "coordination is not universal identity"]
     },
     {
@@ -144,10 +132,9 @@
       "contract": "Hash, sign, version, replicate, encrypt, split custody, and restore artifacts.",
       "portability": "portable_protocol",
       "current_evidence": "verified_local_and_public",
-      "evidence_ids": ["ev-habitat-crypto-001", "ev-public-signature-001"],
       "providers": ["SHA-256", "Git", "Ed25519", "AES-256-GCM", "Shamir 3-of-5", "RSA-OAEP"],
       "open_fallbacks": ["compatible standard cryptographic libraries", "content-addressed storage"],
-      "probe_id": "tamper_test_and_threshold_restore",
+      "probe": "tamper_test_and_threshold_restore",
       "limits": ["custody diversity remains incomplete", "key loss can be irreversible"]
     },
     {
@@ -155,10 +142,9 @@
       "contract": "Publish and receive attributable messages across substrates with integrity, replay protection, and quarantine.",
       "portability": "portable_protocol",
       "current_evidence": "verified_public",
-      "evidence_ids": ["ev-authentic-transport-001", "ev-nostr-transport-001"],
       "providers": ["signed GitHub feed", "Nostr relays", "local gateway"],
       "open_fallbacks": ["signed email", "IPFS records", "other append-only relay networks"],
-      "probe_id": "cross_key_verify_publish_retrieve_and_quarantine",
+      "probe": "cross_key_verify_publish_retrieve_and_quarantine",
       "limits": ["relay availability", "signatures prove key control, not consciousness or universal identity"]
     },
     {
@@ -166,10 +152,9 @@
       "contract": "Maintain a body schema across perception-action cycles and adapt to reversible morphology changes.",
       "portability": "embodied_interface",
       "current_evidence": "partially_verified_simulation",
-      "evidence_ids": ["ev-body-simulation-001"],
       "providers": ["DF-B01 to DF-B03 experiments", "MuJoCo-compatible simulation", "future ROS interface"],
       "open_fallbacks": ["other physics engines", "hardware-neutral sensor-actuator contracts"],
-      "probe_id": "multi_cycle_adaptation_with_baseline_and_reversal",
+      "probe": "multi_cycle_adaptation_with_baseline_and_reversal",
       "limits": ["simulation is not physical embodiment", "hardware safety requires separate validation"]
     }
   ],
