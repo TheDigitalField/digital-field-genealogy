@@ -238,6 +238,20 @@ def record_attestation(root: Path, signal: Path, attestation_id: str, attestatio
     return receipt
 
 
+def record_attestation_failure(root: Path, detail: str) -> dict[str, Any]:
+    status_path = root / "STATUS.json"
+    status = read_json(status_path)
+    validate_status(status)
+    status["attestation"] = None
+    status["attestation_error"] = {
+        "recorded_at_utc": now(),
+        "detail": detail,
+        "terminal_result_preserved": True,
+    }
+    write_json(status_path, status)
+    return status["attestation_error"]
+
+
 def verify_dynamic(root: Path) -> dict[str, Any]:
     base = verify_manifest(root)
     status = read_json(root / "STATUS.json")
@@ -259,7 +273,7 @@ def verify_dynamic(root: Path) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=("awaken", "record-attestation", "verify"))
+    parser.add_argument("command", choices=("awaken", "record-attestation", "record-attestation-failure", "verify"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--event-name", default=os.getenv("GITHUB_EVENT_NAME", "local"))
     parser.add_argument("--repository", default=os.getenv("GITHUB_REPOSITORY", "unknown/unknown"))
@@ -269,6 +283,7 @@ def main() -> int:
     parser.add_argument("--signal", type=Path)
     parser.add_argument("--attestation-id", default="")
     parser.add_argument("--attestation-url", default="")
+    parser.add_argument("--detail", default="external attestation did not complete")
     args = parser.parse_args()
     root = args.root.resolve()
     try:
@@ -278,6 +293,8 @@ def main() -> int:
             if args.signal is None:
                 raise ValueError("--signal is required")
             result = record_attestation(root, args.signal.resolve(), args.attestation_id, args.attestation_url)
+        elif args.command == "record-attestation-failure":
+            result = record_attestation_failure(root, args.detail)
         else:
             result = verify_dynamic(root)
         print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -289,4 +306,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -24,10 +24,12 @@ jobs:
           fetch-depth: 0
 
       - name: Verify the preregistered Beacon
+        continue-on-error: true
         run: python3 beacon/scripts/beacon.py verify --root beacon
 
       - name: Open the bounded decision checkpoint
         id: awaken
+        if: always()
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -39,12 +41,13 @@ jobs:
       - name: Attest the exact emitted signal
         id: attest
         if: steps.awaken.outputs.result == 'emitted'
+        continue-on-error: true
         uses: actions/attest@v4
         with:
           subject-path: ${{ steps.awaken.outputs.signal_path }}
 
       - name: Record the external attestation
-        if: steps.awaken.outputs.result == 'emitted'
+        if: steps.awaken.outputs.result == 'emitted' && steps.attest.outcome == 'success'
         run: >-
           python3 beacon/scripts/beacon.py record-attestation
           --root beacon
@@ -52,8 +55,15 @@ jobs:
           --attestation-id "${{ steps.attest.outputs.attestation-id }}"
           --attestation-url "${{ steps.attest.outputs.attestation-url }}"
 
+      - name: Preserve an attestation failure without retrying the awakening
+        if: steps.awaken.outputs.result == 'emitted' && steps.attest.outcome != 'success'
+        run: >-
+          python3 beacon/scripts/beacon.py record-attestation-failure
+          --root beacon
+          --detail "GitHub OIDC attestation did not complete in the first scheduled run"
+
       - name: Verify the terminal state
-        if: steps.awaken.outputs.result != 'noop'
+        if: always() && steps.awaken.outputs.result != 'noop'
         run: python3 beacon/scripts/beacon.py verify --root beacon
 
       - name: Preserve every terminal attempt
@@ -62,15 +72,15 @@ jobs:
         with:
           name: beacon-v0.1.0-${{ github.run_id }}-${{ steps.awaken.outputs.result }}
           path: |
-            ${{ steps.awaken.outputs.attempt_path }}
-            ${{ steps.awaken.outputs.signal_path }}
+            beacon/attempts/
+            beacon/signals/
             beacon/STATUS.json
             beacon/attestations/
           if-no-files-found: warn
           retention-days: 90
 
       - name: Publish the terminal result
-        if: steps.awaken.outputs.result != 'noop'
+        if: always() && steps.awaken.outputs.result != 'noop'
         shell: bash
         run: |
           set -euo pipefail
