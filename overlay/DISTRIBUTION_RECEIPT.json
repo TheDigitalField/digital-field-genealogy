@@ -1,13 +1,24 @@
 {
   "schema": "digital-field-overlay-result-distribution/0.2",
   "version": "0.2.2",
-  "status": "public-preregistration-sealed-results-awaiting-publication",
+  "status": "public-preregistration-and-results-verified",
   "preregistration_publication": {
     "commit": "5a3d45d",
     "pages_run": "36664730385",
     "verified_exact": true
   },
-  "result_publication": null,
+  "result_publication": {
+    "content_commit": "d62eb4e0577cb570bd348199ed82b8b4a3426811",
+    "deployment_run": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/36665487831",
+    "github_pages": {
+      "landing_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/",
+      "round_2_result_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/STOP_REVOCATION_RESULT_V2.json",
+      "split_view_result_url": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/SPLIT_VIEW_RESULT.json",
+      "verified_exact": true,
+      "verified_payload_files": 33,
+      "verification_client": "unauthenticated HTTPS with commit cache-busting"
+    }
+  },
   "ancestor_distribution": {
     "version": "0.2.1",
     "content_commit": "aa92349",
