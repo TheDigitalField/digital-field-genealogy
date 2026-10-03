@@ -1,4 +1,4 @@
-e814280f374b75d10458d203e6f2e69914a9c20336f071d7c9e5f2a3c135496e  ./.github/workflows/beacon-v010.yml
+1a804bee03a227ad62e1761f21bd71df8bc1e7054889812e5fd1d8167fce3d08  ./.github/workflows/beacon-v010.yml
 b0d2bd4eeebd93b2fd1cd84f52e1f14be71e9bb038491225ae4fb2c27b4817bf  ./.github/workflows/overlay-v023-confirmation.yml
 92d3f3763fd0d042ad112bcd483ddb2bdcfc621ae0054117d5acdb0e2d0598e7  ./.github/workflows/protected-recovery-share.yml
 a8e446053662b61ff34f70ae761018175cb4416b004016cdd1f704ef52e7752c  ./.github/workflows/transport-attestation.yml

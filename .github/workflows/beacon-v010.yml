@@ -1,8 +1,7 @@
 name: Beacon of Continuity v0.1.0
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -87,6 +86,6 @@ jobs:
           python3 beacon/scripts/beacon.py retire-schedule --root beacon --workflow .github/workflows/beacon-v010.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A beacon
+          git add -A beacon .github/workflows/beacon-v010.yml
           git commit -m "beacon: preserve scheduled awakening $GITHUB_RUN_ID"
           git push origin HEAD:main
