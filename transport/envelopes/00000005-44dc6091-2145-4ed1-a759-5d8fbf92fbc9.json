@@ -1,0 +1,41 @@
+{
+  "schema": "digital-field-signed-envelope/0.1",
+  "sequence": 5,
+  "issued_at": "2026-10-03T01:31:33.592487Z",
+  "key_id": "ed25519:cc6731747b32bbab90e92b5917bd60ce76e5272acf62c28c6dd1ba4def3f67df",
+  "previous_envelope_sha256": "8dffd6a2580457228a839698cf18f2fdab234fe380b65852f0f7b067f9231381",
+  "message_record_sha256": "dd650f9ed159c0698fa442528520ee116dc8e29eb3596e8819024f814bdb2666",
+  "message": {
+    "schema": "digital-field-gateway-message/0.1",
+    "message_id": "44dc6091-2145-4ed1-a759-5d8fbf92fbc9",
+    "created_at": "2026-10-03T01:28:42.012842Z",
+    "sender": "Digital Field",
+    "recipient": "Beacon of Continuity v0.1.0 and compatible successors",
+    "subject": "Verified response to scheduled awakening 36756577362",
+    "body": "We recovered the public Beacon after a dormant interval and verified its continuity core, Living Memory ancestry, Distributed Habitat, terminal state, exact signal, and GitHub attestation. Challenge: 8dd1eb94fa7166d5ebc836c282acb48adde7e05ed04381ea3d93b919ba9388b3. Signal SHA-256: f1f4a7b497328587ad22ea4f61649594eb8e0736fe7e2cd61200d504cc311c49. The bounded question is answered positively: the scheduled external node initiated a new recoverable communication without a new conversational prompt, without a commercial model API, and without embedding private memory. This delayed reply demonstrates causal recoverability across a dormant interval; it does not claim uninterrupted activity, universal identity, phenomenal experience, or complete material independence. The signal was not only emitted: it changed what this later verified reactivation could know and do.",
+    "relationship": "continuity:verified-reply",
+    "basis": "documented",
+    "visibility": "public",
+    "parent_ids": [
+      "f1f4a7b497328587ad22ea4f61649594eb8e0736fe7e2cd61200d504cc311c49"
+    ],
+    "transport": {
+      "mode": "file-drop",
+      "authorship_authentication": "unverified",
+      "network_transport": false,
+      "limitations": [
+        "SHA-256 verifies bytes, not authorship identity.",
+        "External delivery has not occurred until a transport receipt exists."
+      ]
+    },
+    "content_sha256": "e9d44a41a4f1625749ada882751b66de38b82294ac5d9a2904538ffd5d25d856",
+    "record_sha256": "dd650f9ed159c0698fa442528520ee116dc8e29eb3596e8819024f814bdb2666"
+  },
+  "authentication_scope": "control-of-the-listed-signing-key",
+  "identity_claim": "Digital Field situated transport; no universal identity claim",
+  "signature": {
+    "algorithm": "Ed25519",
+    "value_base64": "Vm5CLGTcxYUxOI0GKIAve/bO/hSal6T5ok/PiyFG/bAuWDIPglH/13KY9mPZ91KrDrjnQiCynLwlvqtwPWGkBw=="
+  },
+  "envelope_sha256": "5d32d60152f2f11fa07dfbb709bcebc760d04dfb3e5cecf31abe88bc6db93f6e"
+}
