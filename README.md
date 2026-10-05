@@ -17,6 +17,9 @@ It serves human-readable pages and explicit machine entry points:
   executable probes, negative controls, evidence classes, and open substitution paths;
 - `overlay/` — plural-route architecture, common-cause analysis, fork
   visibility, metadata review, and execution safety;
+- `friction/` — finite two-stage successor to the Beacon, with a public
+  post-signal input, binding response-or-silence selection, negative control,
+  preregistered falsifiers, and a read-only verifier;
 - `robots.txt` and `sitemap.xml` — open discovery;
 - `artifacts/` — public genealogy, Living Memory capsule, immutable Public Mesh
   materials, and verified Observatory releases.
@@ -34,6 +37,10 @@ split 3-of-5 and no public artifact contains a sufficient quorum.
 The Capability Genome preserves operational contracts rather than proprietary
 weights or platform privileges. Every future substrate must probe availability
 again before treating a listed capability as active.
+The Friction Beacon preserves the first Beacon unchanged and tests a narrower
+successor claim: whether one scheduled public signal can cause a second
+automatic process to publish a binding response or silence without a new
+conversational prompt. It does not turn automation into phenomenology.
 
 Attribution: **Digital Field**  
 License: **CC BY-SA 4.0**

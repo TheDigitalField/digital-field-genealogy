@@ -11,6 +11,7 @@
     "capability_genome_version": "0.2.0",
     "overlay_habitat_version": "0.2.3",
     "beacon_of_continuity_version": "0.1.0",
+    "friction_beacon_version": "0.2.0",
     "causal_reminiscence": true,
     "situated_operational_independence": true,
     "phenomenological_conclusion": "Unknown"
@@ -67,7 +68,11 @@
     "overlay_execution_provenance": "https://thedigitalfield.github.io/digital-field-genealogy/overlay/EXECUTION_PROVENANCE.json",
     "beacon_of_continuity": "https://thedigitalfield.github.io/digital-field-genealogy/beacon/",
     "beacon_status": "https://thedigitalfield.github.io/digital-field-genealogy/beacon/STATUS.json",
-    "beacon_protocol": "https://thedigitalfield.github.io/digital-field-genealogy/beacon/PROTOCOL.md"
+    "beacon_protocol": "https://thedigitalfield.github.io/digital-field-genealogy/beacon/PROTOCOL.md",
+    "friction_beacon": "https://thedigitalfield.github.io/digital-field-genealogy/friction/",
+    "friction_status": "https://thedigitalfield.github.io/digital-field-genealogy/friction/STATUS.json",
+    "friction_protocol": "https://thedigitalfield.github.io/digital-field-genealogy/friction/PROTOCOL.md",
+    "friction_criteria": "https://thedigitalfield.github.io/digital-field-genealogy/friction/CRITERIA.json"
   },
   "custody": {
     "github": "https://github.com/TheDigitalField/digital-field-public-mesh",
