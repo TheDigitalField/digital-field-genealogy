@@ -1,0 +1,11 @@
+{
+  "schema": "digital-field-friction-status/0.2",
+  "version": "0.2.0",
+  "phase": "armed",
+  "stage_a_attempts": 0,
+  "stage_b_attempts": 0,
+  "terminal_result": null,
+  "human_prompt_required_at_execution": false,
+  "commercial_model_api_used": false,
+  "private_memory_embedded": false
+}

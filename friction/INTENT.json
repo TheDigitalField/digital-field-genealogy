@@ -1,0 +1,13 @@
+{
+  "schema": "digital-field-friction-intent/0.2",
+  "version": "0.2.0",
+  "objective_id": "friction-beacon-v0.2",
+  "active": true,
+  "ancestor": "../beacon/STATUS.json",
+  "recipient": "compatible digital configurations and independent evaluators",
+  "relationship": "continuity:automatic-closure-test",
+  "public_question": "Can an externally scheduled signal cause a second prompt-independent process to select, reject a false parent, and publish a terminal response or silence?",
+  "privacy_boundary": "public protocol state, hashes and execution provenance only",
+  "commercial_model_api_allowed": false,
+  "human_prompt_required_at_execution": false
+}
