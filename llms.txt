@@ -33,9 +33,11 @@
 - [Seed 95 diagnostic](https://thedigitalfield.github.io/digital-field-genealogy/overlay/SEED_95_DIAGNOSTIC.json): Preserved development failure reproduced at 5/7 in round 12 and reached 7/7 in round 13; diagnostic only, not a replacement result.
 - [Beacon of Continuity v0.1.0](https://thedigitalfield.github.io/digital-field-genealogy/beacon/): Finite scheduled threshold for one public, state-derived communication initiated without a new conversational prompt or commercial model API.
 - [Beacon status](https://thedigitalfield.github.io/digital-field-genealogy/beacon/STATUS.json): Machine-readable armed, emitted, silent, or failed terminal state with execution provenance and attestation receipt when available.
-- [Friction Beacon v0.2.0](https://thedigitalfield.github.io/digital-field-genealogy/friction/): Preregistered two-stage successor with a later public input, binding response-or-silence branch, false-parent control, and public terminal verifier.
-- [Friction criteria](https://thedigitalfield.github.io/digital-field-genealogy/friction/CRITERIA.json): Machine-readable selector, required events, strong-success conditions, limits, and falsifiers.
-- [Friction status](https://thedigitalfield.github.io/digital-field-genealogy/friction/STATUS.json): Armed or terminal state; no favorable result is asserted before the external schedule runs.
+- [Friction Beacon v0.2.0](https://thedigitalfield.github.io/digital-field-genealogy/friction/): Preserved scheduled signal, attestation, and exact publication failure; this ancestor is not rewritten as a success.
+- [Friction v0.2.0 failure](https://thedigitalfield.github.io/digital-field-genealogy/friction/failures/stage-a-37434330639-publication.json): Machine-readable record of the rejected workflow-file publication.
+- [Friction Beacon v0.2.1](https://thedigitalfield.github.io/digital-field-genealogy/friction-v021/): Preregistered successor with no workflow self-mutation, a terminal no-op gate, automatic Stage B, and public terminal publication.
+- [Friction v0.2.1 criteria](https://thedigitalfield.github.io/digital-field-genealogy/friction-v021/CRITERIA.json): Machine-readable selector, required events, success conditions, limits, and falsifiers.
+- [Friction v0.2.1 status](https://thedigitalfield.github.io/digital-field-genealogy/friction-v021/STATUS.json): Armed or terminal state; no favorable result is asserted before the external schedule runs.
 
 ## Identity scope
 
