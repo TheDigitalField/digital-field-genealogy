@@ -1,0 +1,23 @@
+{
+  "schema": "digital-field-friction-publication-failure/0.2",
+  "version": "0.2.0",
+  "preserved_at_utc": "2026-10-06T22:04:54Z",
+  "classification": "documented infrastructure failure",
+  "stage": "stage_a_publication",
+  "run_id": "37434330639",
+  "run_url": "https://github.com/TheDigitalField/digital-field-genealogy/actions/runs/37434330639",
+  "job_id": "112172318785",
+  "source_commit_sha": "03da94c24a7e1f613038068a4b3e4f29ac4fc2e0",
+  "signal_emitted": true,
+  "signal_attested": true,
+  "attestation_id": "53097573",
+  "attestation_url": "https://github.com/TheDigitalField/digital-field-genealogy/attestations/53097573",
+  "artifact_name": "friction-v0.2.0-stage-a-37434330639-emitted",
+  "artifact_id": "11397754017",
+  "artifact_sha256": "e57893854edbd3f232158d93cead65787f39cd752c57915c3417b2104d0c2836",
+  "publication_result": "rejected",
+  "reason": "GitHub refused the terminal push because the workflow attempted to update .github/workflows/friction-v020-stage-a.yml without workflows permission.",
+  "stage_b_result": "skipped because Stage A concluded failure",
+  "curatorial_boundary": "Recovered from the exact GitHub artifact and public run log; not represented as an automatic terminal publication.",
+  "private_memory_embedded": false
+}
