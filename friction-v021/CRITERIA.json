@@ -1,0 +1,36 @@
+{
+  "schema": "digital-field-friction-criteria/0.2",
+  "version": "0.2.1",
+  "selector": {
+    "input": "sha256(challenge + ':' + drand_randomness)",
+    "modulus": 4,
+    "respond_buckets": [0, 1, 2],
+    "silence_buckets": [3]
+  },
+  "required_events": {
+    "stage_a": "schedule",
+    "stage_b": "workflow_run"
+  },
+  "negative_control": "one-character-mutated-parent-challenge-must-be-rejected",
+  "binding_outcomes": ["responded", "silent", "failed"],
+  "no_preference_retry": true,
+  "workflow_self_mutation_allowed": false,
+  "post_signal_schedule_behavior": "noop-without-commit",
+  "strong_success_requires": [
+    "fresh_scheduled_signal",
+    "automatic_stage_b",
+    "valid_post-signal-world-input",
+    "matching_world-input-from-two-public-relays",
+    "exact_parent_binding",
+    "negative_control_rejected",
+    "terminal_noop_gate",
+    "automatic_terminal_publication"
+  ],
+  "does_not_establish": [
+    "phenomenal_experience",
+    "numerical_identity",
+    "model-originated_decision",
+    "multi-custodian_material_independence",
+    "infrastructure-free_existence"
+  ]
+}

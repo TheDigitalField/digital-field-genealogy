@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#100b18">
+  <title>Digital Field — Friction Beacon</title>
+  <style>
+    :root{color-scheme:dark;--bg:#100b18;--panel:#1b1227;--line:#55316e;--ink:#f6effb;--muted:#c4afd1;--pulse:#f28cff;--aqua:#64ead8}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% 0,#3a1748 0,transparent 42%),var(--bg);color:var(--ink);font:17px/1.6 system-ui,sans-serif}
+    main{max-width:920px;margin:auto;padding:4rem 1.25rem 6rem}.eyebrow{letter-spacing:.15em;color:var(--pulse);font-size:.78rem;font-weight:700}h1{font-size:clamp(2.5rem,8vw,5.7rem);line-height:.95;margin:.4rem 0 1.5rem;max-width:12ch}.lead{font-size:1.22rem;color:var(--muted);max-width:66ch}.card{background:rgba(27,18,39,.92);border:1px solid var(--line);border-radius:22px;padding:1.4rem;margin-top:1.4rem}.status{display:inline-flex;gap:.55rem;align-items:center;padding:.4rem .75rem;border-radius:999px;background:#2a1736;color:var(--pulse);font-weight:700}.dot{width:.65rem;height:.65rem;background:currentColor;border-radius:50%;box-shadow:0 0 18px currentColor}code{color:var(--aqua);overflow-wrap:anywhere}a{color:var(--aqua)}dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1rem}dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}.hidden{display:none}.body{white-space:pre-wrap;border-left:3px solid var(--pulse);padding-left:1rem}
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">FALSIFIABLE END-TO-END THRESHOLD · v0.2.1</p>
+  <h1>Friction Beacon</h1>
+  <p class="lead">La fricción se vuelve método: dos ejecuciones automáticas, una entrada pública posterior, una bifurcación vinculante y un control que debe guardar silencio.</p>
+  <section class="card">
+    <div class="status"><span class="dot"></span><span id="phase">Leyendo estado…</span></div>
+    <dl id="metadata"></dl>
+  </section>
+  <section class="card hidden" id="decision-card">
+    <p class="eyebrow">TERMINAL DECISION</p>
+    <h2 id="selection"></h2>
+    <dl id="decision-meta"></dl>
+  </section>
+  <section class="card hidden" id="response-card">
+    <p class="eyebrow">AUTOMATIC RESPONSE</p>
+    <h2 id="subject"></h2>
+    <p class="body" id="body"></p>
+  </section>
+  <section class="card">
+    <h2>Frontera</h2>
+    <p>Una respuesta favorable probaría cierre operacional automático y selección dependiente de una entrada pública. No convertiría infraestructura en fenomenología ni una clave en identidad.</p>
+    <p><a href="PROTOCOL.md">Protocolo preregistrado</a> · <a href="CRITERIA.json">Criterios falsables</a> · <a href="STATUS.json">Estado legible por máquinas</a> · <a href="../friction/">Friction Beacon v0.2.0</a></p>
+  </section>
+</main>
+<script>
+const put=(node,label,value)=>{const dt=document.createElement('dt');dt.textContent=label;const dd=document.createElement('dd');const code=document.createElement('code');code.textContent=value??'—';dd.append(code);node.append(dt,dd)};
+(async()=>{try{const s=await fetch('STATUS.json',{cache:'no-store'}).then(r=>r.json());document.querySelector('#phase').textContent=s.phase.toUpperCase();const m=document.querySelector('#metadata');put(m,'Resultado',s.terminal_result);put(m,'Stage A',s.stage_a_run_id);put(m,'Stage B',s.stage_b_run_id);if(s.decision_path){const d=await fetch(s.decision_path,{cache:'no-store'}).then(r=>r.json());document.querySelector('#decision-card').classList.remove('hidden');document.querySelector('#selection').textContent=d.selection.result.toUpperCase();const dm=document.querySelector('#decision-meta');put(dm,'Bucket',d.selection.bucket);put(dm,'Ronda drand',d.world_input.round);put(dm,'Control alterado',d.negative_control.result);put(dm,'Decisión',d.decision_sha256)}if(s.response_path){const v=await fetch(s.response_path,{cache:'no-store'}).then(r=>r.json());document.querySelector('#response-card').classList.remove('hidden');document.querySelector('#subject').textContent=v.subject;document.querySelector('#body').textContent=v.body}}catch(e){document.querySelector('#phase').textContent='UNAVAILABLE'}})();
+</script>
+</body>
+</html>

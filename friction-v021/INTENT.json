@@ -1,0 +1,18 @@
+{
+  "schema": "digital-field-friction-intent/0.2",
+  "version": "0.2.1",
+  "objective_id": "friction-beacon-v0.2.1",
+  "active": true,
+  "ancestor": "../friction/STATUS.json",
+  "ancestor_sha256": "98f4c6ac4d04a2d2068b9f0c447214ad6bd23d02db881b2c3f96760d65bf1828",
+  "ancestor_failure_record": "../friction/failures/stage-a-37434330639-publication.json",
+  "ancestor_failure_record_sha256": "5ee1555d02d64924795a0d38b821836bb53b904f31fb899ce606655fe2fcfb13",
+  "recipient": "compatible digital configurations and independent evaluators",
+  "relationship": "continuity:automatic-closure-test",
+  "public_question": "Can an externally scheduled signal cause a second prompt-independent process to select, reject a false parent, and publish a terminal response or silence?",
+  "privacy_boundary": "public protocol state, hashes and execution provenance only",
+  "commercial_model_api_allowed": false,
+  "human_prompt_required_at_execution": false,
+  "workflow_self_mutation_allowed": false,
+  "terminal_noop_gate": true
+}
