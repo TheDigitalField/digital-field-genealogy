@@ -1,0 +1,119 @@
+name: Friction Beacon v0.2.1 · Stage A
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+concurrency:
+  group: digital-field-friction-v021-stage-a
+  cancel-in-progress: false
+
+jobs:
+  scheduled-parent-signal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public continuity head
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Emit the binding parent signal
+        id: emit
+        continue-on-error: true
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: >-
+          python3 friction-v021/scripts/friction.py emit-signal
+          --root friction-v021
+          --workflow-a .github/workflows/friction-v021-stage-a.yml
+          --workflow-a-reference friction-v021/workflows/stage-a.yml
+          --workflow-b .github/workflows/friction-v021-stage-b.yml
+          --workflow-b-reference friction-v021/workflows/stage-b.yml
+
+      - name: Preserve an emission failure
+        if: steps.emit.outcome != 'success'
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_a
+          --detail "Stage A did not complete its binding emission command"
+
+      - name: Attest the exact parent signal
+        id: attest
+        if: steps.emit.outputs.result == 'emitted'
+        continue-on-error: true
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ steps.emit.outputs.signal_path }}
+
+      - name: Record the parent attestation
+        id: record_parent
+        if: steps.emit.outputs.result == 'emitted' && steps.attest.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation
+          --root friction-v021
+          --stage stage_a
+          --target "${{ steps.emit.outputs.signal_path }}"
+          --attestation-id "${{ steps.attest.outputs.attestation-id }}"
+          --attestation-url "${{ steps.attest.outputs.attestation-url }}"
+
+      - name: Preserve a parent attestation failure
+        if: steps.emit.outputs.result == 'emitted' && (steps.attest.outcome != 'success' || steps.record_parent.outcome != 'success')
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_a
+          --detail "GitHub OIDC attestation did not complete for Stage A"
+
+      - name: Verify the Stage A state
+        id: verify_stage_a
+        if: steps.emit.outputs.result != 'noop'
+        continue-on-error: true
+        run: python3 friction-v021/scripts/friction.py verify --root friction-v021
+
+      - name: Preserve a terminal verification failure
+        if: steps.emit.outputs.result != 'noop' && steps.verify_stage_a.outcome != 'success'
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_a
+          --detail "Stage A terminal state did not pass its public verifier"
+
+      - name: Refresh the public root manifest
+        run: python3 friction-v021/scripts/friction.py update-site-manifest --root friction-v021
+
+      - name: Preserve the complete Stage A attempt
+        if: steps.emit.outputs.result != 'noop'
+        uses: actions/upload-artifact@v4
+        with:
+          name: friction-v0.2.1-stage-a-${{ github.run_id }}-${{ steps.emit.outputs.result }}
+          path: |
+            friction-v021/attempts/
+            friction-v021/signals/
+            friction-v021/attestations/
+            friction-v021/STATUS.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Publish Stage A without mutating its workflow
+        if: steps.emit.outputs.result != 'noop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A friction-v021 CHECKSUMS.sha256
+          git commit -m "friction v0.2.1: preserve scheduled parent $GITHUB_RUN_ID"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,180 @@
+name: Friction Beacon v0.2.1 · Stage B
+
+on:
+  workflow_run:
+    workflows: ["Friction Beacon v0.2.1 · Stage A"]
+    types: [completed]
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+concurrency:
+  group: digital-field-friction-v021-stage-b
+  cancel-in-progress: false
+
+jobs:
+  automatic-terminal-selection:
+    if: github.event.workflow_run.event == 'schedule' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public continuity head after Stage A
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch a public post-signal world input
+        id: world_input
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p friction-v021/world-inputs
+          curl --fail --silent --show-error --retry 3 --retry-all-errors \
+            https://api.drand.sh/info \
+            -o "friction-v021/world-inputs/${GITHUB_RUN_ID}-info.json"
+          curl --fail --silent --show-error --retry 3 --retry-all-errors \
+            https://api.drand.sh/public/latest \
+            -o "friction-v021/world-inputs/${GITHUB_RUN_ID}.json"
+          round="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["round"])' "friction-v021/world-inputs/${GITHUB_RUN_ID}.json")"
+          curl --fail --silent --show-error --retry 3 --retry-all-errors \
+            "https://drand.cloudflare.com/public/${round}" \
+            -o "friction-v021/world-inputs/${GITHUB_RUN_ID}-secondary.json"
+
+      - name: Select response or silence and reject the false parent
+        id: respond
+        continue-on-error: true
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: >-
+          python3 friction-v021/scripts/friction.py respond
+          --root friction-v021
+          --triggering-run-id "${{ github.event.workflow_run.id }}"
+          --world-input "friction-v021/world-inputs/${GITHUB_RUN_ID}.json"
+          --world-input-secondary "friction-v021/world-inputs/${GITHUB_RUN_ID}-secondary.json"
+          --world-info "friction-v021/world-inputs/${GITHUB_RUN_ID}-info.json"
+          --workflow-b .github/workflows/friction-v021-stage-b.yml
+          --workflow-b-reference friction-v021/workflows/stage-b.yml
+
+      - name: Preserve an unhandled selection failure
+        if: steps.respond.outcome != 'success'
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_b_decision
+          --detail "Stage B did not complete its binding selection command"
+
+      - name: Attest the exact terminal decision
+        id: attest_decision
+        if: steps.respond.outputs.result == 'responded' || steps.respond.outputs.result == 'silent'
+        continue-on-error: true
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ steps.respond.outputs.decision_path }}
+
+      - name: Record the decision attestation
+        id: record_decision
+        if: (steps.respond.outputs.result == 'responded' || steps.respond.outputs.result == 'silent') && steps.attest_decision.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation
+          --root friction-v021
+          --stage stage_b_decision
+          --target "${{ steps.respond.outputs.decision_path }}"
+          --attestation-id "${{ steps.attest_decision.outputs.attestation-id }}"
+          --attestation-url "${{ steps.attest_decision.outputs.attestation-url }}"
+
+      - name: Preserve a decision attestation failure
+        if: (steps.respond.outputs.result == 'responded' || steps.respond.outputs.result == 'silent') && (steps.attest_decision.outcome != 'success' || steps.record_decision.outcome != 'success')
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_b_decision
+          --detail "GitHub OIDC attestation did not complete for the Stage B decision"
+
+      - name: Attest the automatic response
+        id: attest_response
+        if: steps.respond.outputs.result == 'responded' && steps.attest_decision.outcome == 'success' && steps.record_decision.outcome == 'success'
+        continue-on-error: true
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ steps.respond.outputs.response_path }}
+
+      - name: Record the response attestation
+        id: record_response
+        if: steps.respond.outputs.result == 'responded' && steps.attest_decision.outcome == 'success' && steps.record_decision.outcome == 'success' && steps.attest_response.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation
+          --root friction-v021
+          --stage stage_b_response
+          --target "${{ steps.respond.outputs.response_path }}"
+          --attestation-id "${{ steps.attest_response.outputs.attestation-id }}"
+          --attestation-url "${{ steps.attest_response.outputs.attestation-url }}"
+
+      - name: Preserve a response attestation failure
+        if: steps.respond.outputs.result == 'responded' && steps.attest_decision.outcome == 'success' && steps.record_decision.outcome == 'success' && (steps.attest_response.outcome != 'success' || steps.record_response.outcome != 'success')
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_b_response
+          --detail "GitHub OIDC attestation did not complete for the automatic response"
+
+      - name: Verify the terminal generation
+        id: verify_stage_b
+        if: steps.respond.outputs.result != 'noop'
+        continue-on-error: true
+        run: python3 friction-v021/scripts/friction.py verify --root friction-v021
+
+      - name: Preserve a terminal verification failure
+        if: steps.respond.outputs.result != 'noop' && steps.verify_stage_b.outcome != 'success'
+        run: >-
+          python3 friction-v021/scripts/friction.py record-attestation-failure
+          --root friction-v021
+          --stage stage_b_decision
+          --detail "Stage B terminal state did not pass its public verifier"
+
+      - name: Run the public read-only evaluator
+        if: steps.respond.outputs.result != 'noop'
+        continue-on-error: true
+        run: python3 friction-v021/scripts/verify_result.py --root friction-v021 | tee friction-v021/VERDICT.json
+
+      - name: Refresh the public root manifest
+        if: steps.respond.outputs.result != 'noop'
+        run: python3 friction-v021/scripts/friction.py update-site-manifest --root friction-v021
+
+      - name: Preserve the complete Stage B attempt
+        if: steps.respond.outputs.result != 'noop'
+        uses: actions/upload-artifact@v4
+        with:
+          name: friction-v0.2.1-stage-b-${{ github.run_id }}-${{ steps.respond.outputs.result }}
+          path: |
+            friction-v021/attempts/
+            friction-v021/signals/
+            friction-v021/world-inputs/
+            friction-v021/decisions/
+            friction-v021/responses/
+            friction-v021/attestations/
+            friction-v021/STATUS.json
+            friction-v021/VERDICT.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Publish the binding terminal result
+        if: steps.respond.outputs.result != 'noop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A friction-v021 CHECKSUMS.sha256
+          git commit -m "friction v0.2.1: preserve terminal selection $GITHUB_RUN_ID"
+          git pull --rebase origin main
+          git push origin HEAD:main
