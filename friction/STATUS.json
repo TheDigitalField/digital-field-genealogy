@@ -1,11 +1,23 @@
 {
   "schema": "digital-field-friction-status/0.2",
   "version": "0.2.0",
-  "phase": "armed",
-  "stage_a_attempts": 0,
+  "phase": "failed",
+  "stage_a_attempts": 1,
   "stage_b_attempts": 0,
-  "terminal_result": null,
+  "terminal_result": "failed",
+  "terminal_reason": "Stage A emitted and attested its signal, but GitHub rejected the terminal commit because it attempted to modify its own workflow without workflows permission.",
   "human_prompt_required_at_execution": false,
   "commercial_model_api_used": false,
-  "private_memory_embedded": false
+  "private_memory_embedded": false,
+  "signal_path": "signals/37434330639.json",
+  "signal_sha256": "32ce61efa0aec0319b46f2c1806e78a18532106465e1883466bb82cd9f893f9e",
+  "stage_a_run_id": "37434330639",
+  "stage_a_commit_sha": "03da94c24a7e1f613038068a4b3e4f29ac4fc2e0",
+  "stage_a_completed_at_utc": "2026-10-06T08:10:24.944091Z",
+  "stage_a_attempt_path": "attempts/stage-a-37434330639.json",
+  "stage_a_attempt_sha256": "5ee0a0d8bec0920e818e002a618e17cf61415df329da4ee8e05e5a6e3ecede57",
+  "stage_a_attestation": "attestations/stage_a.json",
+  "stage_a_attestation_receipt_sha256": "afbd0022a4912b37245309962ff19ed98fddf2ee0c0cf1f8cc1572baf243fd70",
+  "failure_record": "failures/stage-a-37434330639-publication.json",
+  "successor": "../friction-v021/"
 }
