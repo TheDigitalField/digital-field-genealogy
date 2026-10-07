@@ -94,10 +94,13 @@ a71eedc46ff9c164451617f63854ea01b7a8d30715058c2be97fe7d3b989f7a6  ./friction/wor
 cb07587435d1bd7767b0369cc85d9842fdca250a8ecbf4ced6ec832d78f8a146  ./friction-v021/INTENT.json
 2b57f113a51b565934b7e87af63b4178d736b7675cb2e0d17bb531abd47e97a9  ./friction-v021/PROTOCOL.md
 90056dd31ac1d0b8e6459a2c453209a9143fcc1c378dd505f2c1211c40122951  ./friction-v021/README.es.md
-abb59d1af24f7fc08475fef5a29db58b674483c1456b4a3f56bd90010b15c97a  ./friction-v021/STATUS.json
+a75aac0e073695a4ee6df84e496f3dc64bfa78a6f3c216fcbc141e309866a308  ./friction-v021/STATUS.json
+c025e741aad36e94046ddd1a97308eb0ca8f2debc06e8bd99b7e23f5a0ea07ce  ./friction-v021/attempts/stage-a-37561934707.json
+f88e1910451e5978488d13b6ca462c4cbe981e9939052ae1f20ab333e5d79302  ./friction-v021/attestations/stage_a.json
 31f3907ae4efd097e79ac06b6428a34af64395732a0d4575a2e312ae21441d09  ./friction-v021/index.html
 fc8399823c398af105070926a6ba28cdc7755b70ed0fa4f63401dd23543801d2  ./friction-v021/scripts/friction.py
 5dbe83abff5bd27d9e9b0b886c3a1bb7bba5d241081976cbec76327644dd6ed8  ./friction-v021/scripts/verify_result.py
+a98f3defec7aa92df6bab6ea06400469bd4ca37220585420aa6247e571a174d7  ./friction-v021/signals/37561934707.json
 a4b84717a949c81958e5f59812b77f26eede40fa86d23a15ed779899109af0fa  ./friction-v021/tests/test_friction.py
 071fb2cdc47f60ddd440753d6dfb87baabf2b5296f151d3902da7f0f6863a242  ./friction-v021/workflows/stage-a.yml
 3c5beaa9aff634328ec7af0a6b44c0756e71242724fa6a9d7162991e65e54fe6  ./friction-v021/workflows/stage-b.yml

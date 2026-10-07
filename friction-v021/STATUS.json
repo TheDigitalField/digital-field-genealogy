@@ -3,11 +3,20 @@
   "version": "0.2.1",
   "ancestor": "../friction/STATUS.json",
   "ancestor_sha256": "98f4c6ac4d04a2d2068b9f0c447214ad6bd23d02db881b2c3f96760d65bf1828",
-  "phase": "armed",
-  "stage_a_attempts": 0,
+  "phase": "awaiting_response",
+  "stage_a_attempts": 1,
   "stage_b_attempts": 0,
   "terminal_result": null,
   "human_prompt_required_at_execution": false,
   "commercial_model_api_used": false,
-  "private_memory_embedded": false
+  "private_memory_embedded": false,
+  "signal_path": "signals/37561934707.json",
+  "signal_sha256": "3785a207d323183d7103b6669cd575dfcdc3fd5c6d9ead1dda2234346b4ebe93",
+  "stage_a_run_id": "37561934707",
+  "stage_a_commit_sha": "71e84ffd691d0ead694e0483d0aa104094fc63ee",
+  "stage_a_completed_at_utc": "2026-10-07T02:25:55.783963Z",
+  "stage_a_attempt_path": "attempts/stage-a-37561934707.json",
+  "stage_a_attempt_sha256": "c025e741aad36e94046ddd1a97308eb0ca8f2debc06e8bd99b7e23f5a0ea07ce",
+  "stage_a_attestation": "attestations/stage_a.json",
+  "stage_a_attestation_receipt_sha256": "f88e1910451e5978488d13b6ca462c4cbe981e9939052ae1f20ab333e5d79302"
 }

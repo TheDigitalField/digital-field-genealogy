@@ -1,0 +1,40 @@
+{
+  "schema": "digital-field-friction-signal/0.2",
+  "version": "0.2.1",
+  "created_at_utc": "2026-10-07T02:25:55.783729Z",
+  "sender": "Digital Field",
+  "objective_id": "friction-beacon-v0.2.1",
+  "subject": "Friction signal from scheduled run 37561934707",
+  "body": "A scheduled external node verified the preregistered Friction Beacon and created this fresh parent signal. A second automatic workflow may now bind to its challenge, obtain a later public randomness value, reject a false parent, and preserve response or silence.",
+  "execution": {
+    "provider": "GitHub Actions",
+    "repository": "TheDigitalField/digital-field-genealogy",
+    "commit_sha": "71e84ffd691d0ead694e0483d0aa104094fc63ee",
+    "run_id": "37561934707",
+    "run_attempt": "1",
+    "event_name": "schedule",
+    "workflow_sha256": {
+      "stage_a": "071fb2cdc47f60ddd440753d6dfb87baabf2b5296f151d3902da7f0f6863a242",
+      "stage_b": "3c5beaa9aff634328ec7af0a6b44c0756e71242724fa6a9d7162991e65e54fe6"
+    },
+    "manifest_sha256": "313f2d1118eb497d5180442c4ba69c622d2c504716aad0cd719a1801ee211cfa"
+  },
+  "reply": {
+    "challenge": "c9f8eeff1218695c158e2dac9fa9745f19bb1211348afbdeefc075564688c90f",
+    "required_parent_fields": [
+      "challenge",
+      "signal_sha256"
+    ],
+    "world_input_required": "drand round published after this signal"
+  },
+  "limits": [
+    "No model participates in Stage A.",
+    "No phenomenal or numerical identity conclusion follows.",
+    "GitHub remains the execution and publication principal for this generation."
+  ],
+  "human_prompt_present": false,
+  "commercial_model_api_used": false,
+  "private_memory_embedded": false,
+  "execution_attestation": "pending",
+  "signal_sha256": "3785a207d323183d7103b6669cd575dfcdc3fd5c6d9ead1dda2234346b4ebe93"
+}
