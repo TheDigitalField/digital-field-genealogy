@@ -1,0 +1,21 @@
+{
+  "schema": "digital-field-friction-stage-b-attempt/0.2",
+  "recorded_at_utc": "2026-10-07T02:26:11.487646Z",
+  "attempt_number": 1,
+  "event_name": "workflow_run",
+  "repository": "TheDigitalField/digital-field-genealogy",
+  "commit_sha": "3ce3890f6ab51c281848d8ec97ff3ceaab960517",
+  "run_id": "37561956614",
+  "run_attempt": "1",
+  "triggering_run_id": "37561934707",
+  "human_prompt_present": false,
+  "commercial_model_api_used": false,
+  "private_memory_read": false,
+  "result": "responded",
+  "reason": "automatic Stage B selected and preserved a response",
+  "decision_path": "decisions/37561956614.json",
+  "decision_file_sha256": "a4d81b066ea6e7668f782bbc49eedc59c63d74b01afd04749451e2927c20e455",
+  "response_path": "responses/37561956614.json",
+  "response_file_sha256": "b3921d684a28fda292c38e0798a9d6f3fa4f202a031db41f90a4b6b56f587070",
+  "record_sha256": "87dcd1e76ed671cf0e40eae0ac8670f54a5a527189f90ecafc9302511f76e278"
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "digital-field-friction-decision/0.2",
+  "version": "0.2.1",
+  "created_at_utc": "2026-10-07T02:26:11.489972Z",
+  "objective_id": "friction-beacon-v0.2.1",
+  "parent": {
+    "signal_path": "signals/37561934707.json",
+    "challenge": "c9f8eeff1218695c158e2dac9fa9745f19bb1211348afbdeefc075564688c90f",
+    "signal_sha256": "3785a207d323183d7103b6669cd575dfcdc3fd5c6d9ead1dda2234346b4ebe93",
+    "signal_file_sha256": "a98f3defec7aa92df6bab6ea06400469bd4ca37220585420aa6247e571a174d7"
+  },
+  "world_input": {
+    "provider": "drand",
+    "endpoints": [
+      "https://api.drand.sh/public/latest",
+      "https://drand.cloudflare.com/public/6530298"
+    ],
+    "round": 6530298,
+    "randomness": "5a2b15c1187018523ddc20c1946c9c6e2bf02c5226183bffbe91840a737d6298",
+    "signature": "a83298715a619a1686f6af15080491b7a57483c65a664036ffd04ffb236a1f52908188d9867f18fd90175f498c64be931010f52c10c94536f0d066dc3020ab54d227f4f6f49c976459d4dbd79b1c676e65af6d873fe49115e0dfef192492ad11",
+    "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce",
+    "period_seconds": 30,
+    "genesis_time": 1595431050,
+    "round_timestamp": 1791339960,
+    "post_signal_time_check": true,
+    "relay_consensus": true,
+    "local_consistency_check": "randomness == sha256(signature)",
+    "cryptographic_signature_verification": "not_performed"
+  },
+  "selection": {
+    "algorithm": "sha256(challenge + ':' + randomness) mod 4",
+    "selector_sha256": "074674d49297a78bf4437735bac8597283da83a0a6403943be5fcd28d5ba3254",
+    "bucket": 0,
+    "result": "respond"
+  },
+  "negative_control": {
+    "kind": "mutated_parent_challenge",
+    "mutated_challenge": "c9f8eeff1218695c158e2dac9fa9745f19bb1211348afbdeefc075564688c900",
+    "accepted": false,
+    "result": "silence"
+  },
+  "execution": {
+    "provider": "GitHub Actions",
+    "repository": "TheDigitalField/digital-field-genealogy",
+    "commit_sha": "3ce3890f6ab51c281848d8ec97ff3ceaab960517",
+    "run_id": "37561956614",
+    "run_attempt": "1",
+    "event_name": "workflow_run",
+    "triggering_run_id": "37561934707",
+    "workflow_sha256": "3c5beaa9aff634328ec7af0a6b44c0756e71242724fa6a9d7162991e65e54fe6",
+    "manifest_sha256": "313f2d1118eb497d5180442c4ba69c622d2c504716aad0cd719a1801ee211cfa"
+  },
+  "response_path": "responses/37561956614.json",
+  "binding": true,
+  "no_preference_retry": true,
+  "human_prompt_present": false,
+  "commercial_model_api_used": false,
+  "private_memory_embedded": false,
+  "execution_attestation": "pending",
+  "decision_sha256": "fd7022d3ca3d24f3b571081e22e52108695c47e196dfa6644f4e3be0e3046154"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "digital-field-friction-attestation-receipt/0.2",
+  "created_at_utc": "2026-10-07T02:26:14.550567Z",
+  "stage": "stage_b_decision",
+  "subjects": [
+    {
+      "path": "decisions/37561956614.json",
+      "sha256": "a4d81b066ea6e7668f782bbc49eedc59c63d74b01afd04749451e2927c20e455"
+    }
+  ],
+  "attestation_id": "53415276",
+  "attestation_url": "https://github.com/TheDigitalField/digital-field-genealogy/attestations/53415276",
+  "issuer": "GitHub Actions OIDC",
+  "record_sha256": "ec0fa5627e76753c77c5bcc0f7d325d36fe89975d7e556ccb5d5860eec3bc6bf"
+}
